@@ -42,10 +42,11 @@
                         <h3 class="titre-rejoindre">Titre présentation 3 à créer</h3>
                         <p class="paragraphe-rejoindre">
                         présentation 3 à créer
-                        
+                        </p>
                     </div>
-                    <div class="col-12 col-md-6 mx-0 px-0">
-                        <img class="" alt="Image à trouver" src="./public/IMG/" width="100%">
+                    <div class="embed-responsive embed-responsive-4by3 col-12 col-md-6 mx-0 px-0">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.4670992612046!2d-2.0269623840783435!3d48.6361042792663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480e813b600b3917%3A0x99fa5dd2eefeb81!2s25%20Rue%20de%20la%20Cit%C3%A9%2C%2035400%20Saint-Malo!5e1!3m2!1sfr!2sfr!4v1649968469437!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <img class="" alt="Image à trouver" src="./public/IMG/" width="100%"> -->
                     </div>
                     
 
