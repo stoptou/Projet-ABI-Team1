@@ -3,7 +3,7 @@ namespace ABI\controller;
 use \ABI\model\Database;
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-require($root.'./controller/Auth.php');
+require($root.'/controller/Auth.php');
 
 
 class Dashboard
