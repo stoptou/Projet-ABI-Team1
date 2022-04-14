@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 
 <div class="px-0 mx-0 d-none d-md-block banniere">
-                        <img class="w-100" alt="banniere à créer" src="./public/IMG/" height="300px">
+                        <img class="w-100" alt="banniere à créer" src="./public/IMG/Banniere.png" height="300px">
                 </div>
                 <div class="row mx-0">
 
