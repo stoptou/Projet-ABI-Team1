@@ -1,4 +1,4 @@
-        <footer class="container text-center p-4">
+        <footer class="container text-center p-4 mt-5">
                     <div class="row">
                         <div class="col-md-4 col-12">
                             <img class="img-fluid" alt="logo a créer" src="./public/IMG/.png">
