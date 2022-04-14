@@ -6,7 +6,10 @@ use ABI\model\Client;
 use ABI\model\Secteur;
 use ABI\model\Database;
 use Exception;
-require ('./model/Client.php');
+
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require ($root.'/model/Client.php');
+
 class Buisness
 {
     public static function viewClients()

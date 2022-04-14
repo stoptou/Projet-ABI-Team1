@@ -3,7 +3,8 @@
 namespace ABI\model;
 use \PDO;
 use \Exception;
-require ('./model/Database.php');
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require ($root.'/model/Database.php');
 
 class Client extends Database
 {

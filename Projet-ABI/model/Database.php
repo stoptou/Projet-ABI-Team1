@@ -3,7 +3,6 @@ namespace ABI\model;
 
 use Exception;
 use \PDO;
-use User;
 
 class Database
 {
@@ -148,7 +147,7 @@ class Database
                 'ville'=>$value,
                 'telephone'=>$value
             ]);
-            return $requete->fetchALL();
+            return $requete->fetchAll(PDO::FETCH_BOTH);
         
        }
         catch(Exception $e)

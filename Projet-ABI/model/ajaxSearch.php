@@ -1,9 +1,9 @@
 <?php
 
-use ABI\controller\DashboardSearch;
+use ABI\controller\Dashboard;
 
 require '../controller/Controller.php';
-require '../controller/DashboardSearch.php';
+require '../controller/Dashboard.php';
 require './Database.php';
 
 
@@ -11,7 +11,7 @@ if(!empty($_GET['search'])){
 
   
     
-    $results=DashboardSearch::modifyUserDashboard(htmlentities($_GET['search']));
+    $results=Dashboard::modifyUserDashboard(htmlentities($_GET['search']));
     if(!empty($results))
     {
         
