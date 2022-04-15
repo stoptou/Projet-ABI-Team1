@@ -40,13 +40,23 @@ ob_start();
                     </div>
                 <?php
                     }
+                
+                    else if(isset($_GET['successDel']))
+                    {
                 ?>
+                        <div class="alert alert-success">
+                           Utilisateur effacé avec succés!
+
+                        </div>
+                <?php
+                    }
+                    ?>
 
 <div class="row modif text-center mb-4">
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image utilisateurs à créer></a>
+                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=dashboardList">Afficher les utilisateurs</a>
@@ -57,10 +67,21 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer></a>
+                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action3=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
+                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
+                </li>   
+            </ul>
+               
+        </div>
+        <div class="col">
+            <ul class="nav nav flex-column">
+                <li class="nav-item">
+                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
                 </li>   
             </ul>
                
@@ -68,21 +89,10 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer></a>
+                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
-                </li>   
-            </ul>
-               
-        </div>
-        <div class="col">
-            <ul class="nav nav flex-column">
-              <li class="nav-item">
-                  <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer></a>
-                </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
+                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=deleteUser">Supprimer un utilisateur</a>
                 </li>   
             </ul>
                
@@ -108,6 +118,11 @@ ob_start();
                     elseif($_GET['action3']==='modifyUser')
                     {
                         Controller::viewpage('./view/pages/modifyUserView.php');
+                                
+                    }
+                    elseif($_GET['action3']==='deleteUser')
+                    {
+                        Controller::viewpage('./view/pages/deleteUserView.php');
                                 
                     }
                                             

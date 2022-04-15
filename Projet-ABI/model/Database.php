@@ -63,7 +63,6 @@ class Database
             
             return $req->fetchAll();
             
-           
         }
         catch(Exception $e)
         
@@ -87,11 +86,13 @@ class Database
         }
 
     }
-    public function deleteUser(int $id)
+
+    // Modification de la fonction pour effacer les utilisateur par l'id
+    public function deleteUserById(int $id)
     {
         try
         {
-            $req= $this->getPDO()->prepare('DELETE FROM utilisateur WHERE id_user=:id');
+            $req= $this->getPDO()->prepare("DELETE FROM utilisateur WHERE id_user=:id");
             $req->bindValue(':id', $id, PDO::PARAM_INT);
             $req->execute();
         }
@@ -101,6 +102,7 @@ class Database
         }
 
     }
+
     public function addUser(string $first_name, string $last_name, string $email, string $password,string $role)
     {
         try
