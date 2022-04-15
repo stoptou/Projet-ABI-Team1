@@ -1,8 +1,8 @@
 ## On va ignorer le fichier "Database.php" qui contient la config de connexion
 ## personnelle à chacun, quand on fait un "git add ."
 
-/Projet-Abi-Team1/Projet-ABI/model/Database.php
-/Projet-ABI/model/Database.php
+
+Projet-ABI/model/Database.php
 
 ##  ".vscode"
 
