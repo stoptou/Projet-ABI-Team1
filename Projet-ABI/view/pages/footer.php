@@ -5,14 +5,14 @@
                         </div>
                         <div class="navbar col-md-4 col-12 text-center">
                             <ul class="navbar-nav text-center">
-                                <li class="footer-link nav-item">
-                                    <a href="#"class='nav-link'>Notre Charte</a>
+                                <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME']==='/charte.php'):?> active <?php endif?>">
+                                    <a href="index.php?action=charte"class='nav-link'>Notre Charte</a>
                                 </li>
                                 <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME']==='/contact.php'):?> active <?php endif?>">
-                                    <a href="./contact.php" class='nav-link'>Contactez nous</a>
+                                    <a href="index.php?action=contact" class='nav-link'>Contactez nous</a>
                                 </li>
-                                <li class="footer-link nav-item">
-                                    <a href="#" class='nav-link'>Mentions légales</a>
+                                <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME'] === '/mentionsLegales.php'):?> active <?php endif?>">
+                                    <a href="index.php?action=mentionsLegales" class='nav-link'>Mentions légales</a>
                                 </li>    
                             </ul>
 

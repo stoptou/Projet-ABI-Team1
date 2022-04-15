@@ -19,18 +19,18 @@
                     
                 </div>
                 <div class="col mt-4 pt-4 text-left d-md-block d-none">
-                    <h4 class="slogan">Slogan à créer</h4>
+                    <h4 class="slogan">Une même expérience pour toutes vos envies</h4>
                 </div>
                 <!-- menu burger-->
                 <div class="col-2 d-md-none d-block dropdown dropleft">
                     <img alt='menu-burger' src="./public/IMG/menu-burger.png" class="img-fluid icone" width="100%" data-toggle="dropdown">
                         <div class="dropdown-menu">
                             <!--liens a ajouter -->
-                            <a class="dropdown-item" href="/index.php">Acceuil</a>
-                            <a class="dropdown-item" href="#">Groupe ABI</a>
-                            <a class="dropdown-item" href="#">Actualité</a>
-                            <a class="dropdown-item" href="#">Nos offres</a>
-                            <a class="dropdown-item" href="#">Contact</a>
+                            <a class="dropdown-item" href="/index.php">Accueil</a>
+                            <a class="dropdown-item" href="../index.php?action=ABIgroup">Groupe ABI</a>
+                            <a class="dropdown-item" href="./index.php?action=actuality">Actualité</a>
+                            <a class="dropdown-item" href="./index.php?action=offer">Nos offres</a>
+                            <a class="dropdown-item" href="./index.php?action=contact">Contact</a>
                         </div> 
 
                 </div>
