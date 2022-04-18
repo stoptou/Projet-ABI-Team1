@@ -60,9 +60,20 @@
                     <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=contact'):?> active <?php endif?>">
                         <a class="nav-link" href="../index.php?action=contact">Contact</a>
                     </li>
-                    <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=connexion'):?> active <?php endif?>">
-                        <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=connexion">Connexion</a>
-                    </li>
+                    <?php  
+                    if (!empty($_SESSION)) {?>
+                        <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=logOut'):?> active <?php endif?>">
+                            <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=logOut">Déconnexion</a>
+                        </li>
+                    <?php 
+                    } 
+
+                    else { ?>
+                        <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=connexion'):?> active <?php endif?>">
+                            <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=connexion">Connexion</a>
+                        </li>
+                    <?php 
+                    } ?>
 
                 </ul>
                

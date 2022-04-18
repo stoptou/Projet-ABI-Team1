@@ -1,3 +1,9 @@
+<?php
+if (!empty($_SESSION)) {
+    header('Location:./index.php?action=home');
+        exit();
+} ?>
+
 <?php $title='Se connecter'; ?>
 
 <?php ob_start() ?>

@@ -14,8 +14,9 @@ class Controller
     public static function logOut()
     {
         session_start();
+        session_unset();
         session_destroy();
-        header('Location:./index.php?action=connexion');
+        header('Location:./index.php');
     }
   
 }
