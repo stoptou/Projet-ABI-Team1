@@ -18,7 +18,6 @@ $results=Dashboard::viewUsers();
                 <th>Nom</th>
                 <th>Email</th>
                 <th>Rôle</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -32,7 +31,6 @@ $results=Dashboard::viewUsers();
                 <td><?= $result->last_name?></td>
                 <td><?= $result->email?></td>
                 <td><?= $result->role?></td>
-                <td><a href="#">Modifier</a></td>
             </tr>
            <?php
                     }

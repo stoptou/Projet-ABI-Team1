@@ -57,7 +57,7 @@ class Database
     public function getUser(int $id)
     {
         try{
-            $req=$this->getPDO()->prepare("SELECT * FROM utilisateur WHERE id_user:id");
+            $req=$this->getPDO()->prepare("SELECT * FROM utilisateur WHERE id_user=:id");
             $req->bindValue(':id', $id, PDO::PARAM_INT);
             $req->execute();
             
@@ -72,13 +72,15 @@ class Database
         }
 
     }
-    public function updateUser(int $id, string $role)
+    public function updateUser(int $id, string $first_name, string $last_name, string $email)
     {
         try
         {
-            $req= $this->getPDO()->prepare('UPDATE utilisateur SET role= :role WHERE id_user=:id');
+            $req= $this->getPDO()->prepare('UPDATE utilisateur SET first_name=:first_name, last_name=:last_name, email=:email WHERE id_user=:id');
             $req->bindValue(':id', $id, PDO::PARAM_INT);
-            $req->bindValue(':role', $role, PDO::PARAM_STR);
+            $req->bindValue(':first_name', $first_name, PDO::PARAM_STR);
+            $req->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+            $req->bindValue(':email', $email, PDO::PARAM_STR);
             $req->execute();
         }
         catch(Exception $e)

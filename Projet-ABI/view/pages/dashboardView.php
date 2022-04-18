@@ -3,7 +3,7 @@
 
 use ABI\controller\Controller;
 use \ABI\controller\Auth;
-
+use ABI\model\Database;
 
 
 $title='Tableau de bord';
@@ -46,7 +46,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image utilisateurs à créer></a>
+                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=dashboardList">Afficher les utilisateurs</a>
@@ -57,7 +57,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer></a>
+                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action3=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
@@ -68,7 +68,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer></a>
+                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
@@ -79,7 +79,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer></a>
+                  <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
@@ -93,21 +93,37 @@ ob_start();
 <?php 
     if(isset($_GET['action3']))
     {
+        $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
                     if($_GET['action3']==='dashboardList')
                     {
-                        Controller::viewpage('./view/pages/listView.php');
+                        
+                        Controller::viewPage($root.'./view/pages/listView.php');
                     }
                             
                 
                     elseif($_GET['action3']==='addUser')
                     {
-                        Controller::viewpage('./view/pages/addUserView.php');
+                        Controller::viewPage($root.'./view/pages/addUserView.php');
                                 
                     }
                     elseif($_GET['action3']==='modifyUser')
                     {
-                        Controller::viewpage('./view/pages/modifyUserView.php');
+                        Controller::viewPage($root.'./view/pages/modifyUserView.php');
+                                
+                    }
+                    elseif($_GET['action3']==='panelModifyUser')
+                    {
+                        if(isset($_POST["id_user"]))
+                        {
+                            $data = new Database('abi');
+                            $result = $data->updateUser($_POST["id_user"], $_POST["first_name"], $_POST["last_name"], $_POST["email"]);
+                            Controller::viewPage($root.'./view/pages/listView.php');
+                        }
+                        else
+                        {
+                            Controller::viewPage($root.'/view/pages/panelModifyUser.php');
+                        }
                                 
                     }
                                             

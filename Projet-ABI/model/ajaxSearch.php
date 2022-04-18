@@ -41,39 +41,8 @@ if(!empty($_GET['search'])){
             <td><?= $result->last_name?></td>
             <td><?= $result->email?></td>
             <td><?= $result->role?></td>
-            <td><a href="#" data-toggle="modal" data-target="#myModal">Modifier</a></td>
+            <td><a href="../index.php?action=dashboard&action3=panelModifyUser&user_id=<?=$result->id_user?>">Modifier</a></td>
         </tr>
-         <!--------------------------------------------the modal-----!-->
-    <div class="modal fade" id="myModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modifier un utilisateur</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-          <div class="form-group">
-                <input type="text" value="<?=$result->first_name;?>" class="form-control">
-          </div>
-          <div class="form-group">
-                <input type="text" value="<?=$result->last_name;?>" class="form-control">
-          </div>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!------------------------------------------------------------>
        <?php
                 }
 
