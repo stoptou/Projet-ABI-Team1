@@ -14,7 +14,7 @@
                         <h2 class="titre-section text-center">Nous découvrir</h2>
 
                         <!--Faire le liens du bouton avec GROUP ABI-->
-                        <button onClick="window.location.href = 'http://localhost:8888/index.php?action=ABIgroup'" class="btn btn-primary">Notre group</button>
+                        <button onClick="window.location.href = 'http://localhost:3306/index.php?action=ABIgroup'" class="btn btn-primary">Notre group</button>
 
                     </div>
                     <div class="col-md-2">
