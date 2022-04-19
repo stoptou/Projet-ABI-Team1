@@ -7,7 +7,7 @@ body{
     list-style: none;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-   
+    color:#505050;
    
 
 }
@@ -24,7 +24,7 @@ header
     transition: .2s ease !important;
 }
 .bonjour a{
-    color: #004279;
+    color: #505050;
     font-size: 20px;
     font-weight: bold;
 
@@ -55,7 +55,7 @@ footer
 }
 header a
 {
-    color: #004279;
+    color: #505050;
     font-size: 20px;
 
 }
@@ -91,7 +91,7 @@ section
    
 }
 .modif a{
-    color: #004279;
+    color: #505050;
     font-size: 20px;
 }
 .modif img:hover
@@ -119,6 +119,5 @@ table th{
 }
 .formAdd label{
     font-size: 18px;
-    color: #004279;
-    font-weight: 800;
+    color: #505050;
 }

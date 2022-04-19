@@ -7,8 +7,7 @@ body{
     list-style: none;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-   
-
+    color:#505050;
 }
 a{
     text-decoration: none;
@@ -43,7 +42,7 @@ header, section{
 }
 .slogan
 {
-    color: rgba(0, 0, 0, 0.63);
+    color:#505050;
     
 }
 .menu
@@ -53,7 +52,7 @@ header, section{
 .menu ul li a{
     
     font-size: 18px;
-    color: #004279;
+    color:#505050;
 }
 
 a:hover{
@@ -88,7 +87,7 @@ a:hover{
 .paragraph-section
 {
     font-size: 18px;
-    color: #333333;
+    color:#505050;
 }
 .titre-section
 {
@@ -107,7 +106,7 @@ a:hover{
 }
 .titre-rejoindre, .paragraphe-rejoindre
 {
-    color: #747474;
+    color:#505050;
 }
 footer
 {
@@ -116,7 +115,7 @@ footer
 }
 .footer-link a
 {
-    color: black;
+    color:#505050;
 }
 .connexion
 {
@@ -147,8 +146,8 @@ p{
     border-radius: 25px;
 }
 label{
-    color: #004279;
-   font-weight: 00;
+    color:#505050;
+    font-weight: 00;
     font-size: 20px;
 }
 label:hover{
