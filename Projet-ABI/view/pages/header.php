@@ -35,7 +35,6 @@
                             <a class="dropdown-item" href="./index.php?action=offer">Nos offres</a>
                             <a class="dropdown-item" href="./index.php?action=contact">Contact</a>
 
-
                         </div> 
                 </div>
                 <div class="col-2 d-md-none d-block">
@@ -63,8 +62,12 @@
                     <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=contact'):?> active <?php endif?>">
                         <a class="nav-link" href="../index.php?action=contact">Contact</a>
                     </li>
+                    
                     <?php  
                     if (!empty($_SESSION)) {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.php?action=dashboard">Dashboard</a>
+                        </li>
                         <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=logOut'):?> active <?php endif?>">
                             <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=logOut">Déconnexion</a>
                         </li>
