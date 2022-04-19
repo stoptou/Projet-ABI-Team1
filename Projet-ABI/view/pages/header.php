@@ -1,3 +1,5 @@
+<?php use ABI\model\Database; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +49,9 @@
             <nav class="menu navbar navbar-expand d-none d-md-block">
                 <ul class="navbar-nav d-flex justify-content-around">
                     <!--Mettre la classe Active en place sur le Menu-->
-                <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=home'):?> active <?php endif?>">
+                <li class="nav-item <?php
+
+                    if ($_SERVER['SCRIPT_NAME']==='./index.php?action=home'):?> active <?php endif?>">
                         <a class="nav-link" href="../index.php?action=home">Accueil</a>
                     </li>
                     <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=ABIgroup'):?> active <?php endif?>">
@@ -63,16 +67,28 @@
                         <a class="nav-link" href="../index.php?action=contact">Contact</a>
                     </li>
                     
-                    <?php  
-                    if (!empty($_SESSION)) {?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.php?action=dashboard">Dashboard</a>
-                        </li>
+                    <?php 
+                    
+                    if (!empty($_SESSION)) {
+                        $data = new Database('abi');
+                        $userRole = $data->getUser((int) $_SESSION['id']);
+
+                        if($userRole[0]['role'] == "Administrateur") {?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.php?action=dashboard">Tableau de Bord</a>
+                            </li> 
+                        <?php } ?>
+
+                        <?php if($userRole[0]['role'] == "Commercial") {?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.php?action=buisness">Tableau de Bord</a>
+                            </li> 
+                        <?php } ?>
+
                         <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=logOut'):?> active <?php endif?>">
                             <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=logOut">Déconnexion</a>
                         </li>
-                    <?php 
-                    } 
+                    <?php }
 
                     else { ?>
                         <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=connexion'):?> active <?php endif?>">

@@ -17,7 +17,7 @@
     <header class='container'>
        <div class='row mt-4'>
             <div class='col p-4'>
-                <a href="index.php?action=dashboard" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/" alt="Image Home à créer" width="100px" height="100px"></a>
+                <a href="index.php" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/" alt="Image Home à créer" width="100px" height="100px"></a>
             </div>
             <div class='col p-4'>
                 <ul class="nav flex-column text-center">
