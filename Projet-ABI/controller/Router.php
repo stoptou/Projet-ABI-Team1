@@ -37,6 +37,16 @@ if (isset($_GET['action'])) {
             Controller::viewPage('./view/pages/connexionView.php');
            
         }
+        elseif($_GET['action'] == 'mentionsLegales') 
+        {
+            Controller::viewPage('./view/pages/mentionsLegales.php');
+        }
+
+        elseif($_GET['action'] == 'charte') 
+        {
+            Controller::viewPage('./view/pages/charte.php');
+        }
+           
         elseif($_GET['action']=='dashboard')
         {
                                                       
