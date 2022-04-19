@@ -35,7 +35,7 @@ use ABI\controller\Buisness;
                 </div>
                 <div class="form-group">
                   <label for="code_postale">
-                Code Postale
+                Code Postal
                   </label>
                   <input type="text" name="code_postale" id='code_postale'class="form-control">  
 

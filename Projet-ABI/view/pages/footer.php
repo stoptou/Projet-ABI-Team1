@@ -1,7 +1,8 @@
         <footer class="container text-center p-4 mt-5">
                     <div class="row">
                         <div class="col-md-4 col-12">
-                            <img class="img-fluid" alt="logo a créer" src="./public/IMG/.png">
+                        <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:50% ></a>
+                            <!-- <img class="img-fluid" alt="logo a créer" src="./public/IMG/.png"> -->
                         </div>
                         <div class="navbar col-md-4 col-12 text-center">
                             <ul class="navbar-nav text-center">
