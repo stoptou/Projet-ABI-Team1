@@ -14,31 +14,29 @@
     <div class="container-fluid px-0">
         <header class="container px-0 mt-3">
             <div class="row logo mx-0 d-flex align-items-center">
-                <div class="col p-4">
-                    <a href="/index.php"><img alt="logo a ajouter" src="./public/IMG/" class="img-fluid"></a>
-                    
+                <div class="col-2 p-2">
+                    <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:100% ></a>                   
                 </div>
-                <div class="col mt-4 pt-4 text-left d-md-block d-none">
-                    <h4 class="slogan">Slogan à créer</h4>
+                <div class="col-6 mt-2 pt-2 text-center d-md-block d-none">
+                    <h4 class="slogan">ACTIVE BRETAGNE INFORMATIQUE</h4>
+                    <h5 class="sloganB">Un nouveau monde en "Tique"</h5>
                 </div>
                 <!-- menu burger-->
                 <div class="col-2 d-md-none d-block dropdown dropleft">
                     <img alt='menu-burger' src="./public/IMG/menu-burger.png" class="img-fluid icone" width="100%" data-toggle="dropdown">
                         <div class="dropdown-menu">
                             <!--liens a ajouter -->
-                            <a class="dropdown-item" href="/index.php">Acceuil</a>
+                            <a class="dropdown-item" href="/index.php">Accueil</a>
                             <a class="dropdown-item" href="#">Groupe ABI</a>
                             <a class="dropdown-item" href="#">Actualité</a>
                             <a class="dropdown-item" href="#">Nos offres</a>
                             <a class="dropdown-item" href="#">Contact</a>
                         </div> 
-
                 </div>
                 <div class="col-2 d-md-none d-block">
                    <img alt="Icone profil à ajouter" src="./public/IMG/" class="img-fluid icone" width="100%"> 
-                </div>
 
-               
+                </div>            
                 
             </div>
             <hr class="my-0 py-0">

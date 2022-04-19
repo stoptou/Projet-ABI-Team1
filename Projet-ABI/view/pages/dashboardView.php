@@ -9,9 +9,10 @@ use \ABI\controller\Auth;
 $title='Tableau de bord';
 
 
-Auth::checkRoleAdmin();
+$role=Auth::checkRoleAdmin();
 $first_name=$_SESSION['first_name'];
 $last_name=$_SESSION['last_name'];
+
 
 ob_start(); 
 ?>
@@ -19,7 +20,7 @@ ob_start();
 <hr class="py-0 my-0">
 <div class='row p-2 bonjour mx-0'>
         <div class='col'>
-        <div class="p-3 alert alert-success">Vous étes connecté en tant que <?= strtoupper($first_name).' '.strtoupper($last_name); ?></div>
+        <div class="p-3 alert alert-success">vous êtes connecté en tant que <?='<b>'.' '.strtoupper($first_name).' '.strtoupper($last_name).'('.$role.')'.'</b>'; ?></div>
 
         </div>
         <div class="col text-right">

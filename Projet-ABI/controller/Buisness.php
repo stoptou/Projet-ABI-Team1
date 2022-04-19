@@ -9,6 +9,7 @@ use Exception;
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require ($root.'/model/Client.php');
+require ($root.'/model/Secteur.php');
 
 class Buisness
 {
