@@ -14,8 +14,8 @@ ob_start();
     </div>
     <div class="col-2">
         <ul class="navbar-nav">
-            <li class="navbar-item"><a href="./index.php?action=buisness" class="navbar-link"><i class="fas fa-home"></i></a></li>
-            <li class="navbar-item pl-2"><a href="./index.php?action=buisness" class="navbar-link">Accueil</a></li>
+            <li class="navbar-item"><a href="./index.php" class="navbar-link"><i class="fas fa-home"></i></a></li>
+            <li class="navbar-item pl-2"><a href="./index.php" class="navbar-link">Accueil</a></li>
         </ul>
     </div>
     <?php

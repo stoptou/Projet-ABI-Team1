@@ -77,17 +77,7 @@ ob_start();
             </ul>
                
         </div>
-        <div class="col">
-            <ul class="nav nav flex-column">
-                <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
-                </li>   
-            </ul>
-               
-        </div>
+        
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">

@@ -34,6 +34,10 @@ class Dashboard
             {
                 header('Location:./index.php?action=buisness');
             }
+            else
+            {
+                header('Location:./index.php');
+            }
         }
         else
         {
