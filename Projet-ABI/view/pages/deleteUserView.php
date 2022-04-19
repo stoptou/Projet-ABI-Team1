@@ -32,8 +32,7 @@ $results=Dashboard::viewUsers();
                 <td><?= $result->last_name?></td>
                 <td><?= $result->email?></td>
                 <td><?= $result->role?></td>
-                
-                <td><a href="./index.php?action=deleteUser?id_user=<?php echo $result->id_user?>">Supprimer</a></td>
+                <td> <a href="../index.php?action=dashboard&action3=deleteUser&id_user=<?= $result->id_user?>">Supprimer</a></td>
             </tr>
            <?php
                     }

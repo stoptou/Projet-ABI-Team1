@@ -37,12 +37,6 @@ if (isset($_GET['action'])) {
             Controller::viewPage('./view/pages/connexionView.php');
            
         }
-        // Ajout d'une condition pour effacer un utilisateur 15/04 Marine Mickael
-        elseif($_GET['action']=='deleteUser')
-        { 
-            Dashboard::deleteUserDashboardById(htmlentities($_GET['id_user']));
-            
-        }
         elseif($_GET['action']=='dashboard')
         {
                                                       

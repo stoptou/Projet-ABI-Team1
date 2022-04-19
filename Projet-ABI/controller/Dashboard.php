@@ -61,11 +61,10 @@ class Dashboard
     public static function deleteUserDashboardById($id)
     {
         $results= new Database('abi');
-        $results->deleteUserById((int)$id);
+        $results->deleteUserById($id);
         header('Location:./index.php?action=dashboard&successDel=true');
         return $results;
     }
-    
-   
+     
 }
 ?>

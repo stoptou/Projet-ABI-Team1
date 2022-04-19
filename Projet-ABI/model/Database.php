@@ -92,11 +92,12 @@ class Database
     {
         try
         {
-            $req= $this->getPDO()->prepare("DELETE FROM utilisateur WHERE id_user=:id");
-            $req->bindValue(':id', $id, PDO::PARAM_INT);
+            
+            $req= $this->getPDO()->prepare('DELETE FROM utilisateur WHERE id_user =:id');
+            $req->bindParam(':id', $id, PDO::PARAM_INT);
             $req->execute();
-        }
-        catch(Exception $e)
+
+        }catch(Exception $e)
         {
             die($e->getMessage());
         }

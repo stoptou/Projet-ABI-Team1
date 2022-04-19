@@ -3,6 +3,7 @@
 
 use ABI\controller\Controller;
 use \ABI\controller\Auth;
+use ABI\model\Database;
 
 
 
@@ -122,10 +123,14 @@ ob_start();
                     }
                     elseif($_GET['action3']==='deleteUser')
                     {
+                        if(isset($_GET['id_user'])){
+                            $id = $_GET['id_user'];
+                            $results= new Database('abi');
+                            $results->deleteUserById($id);
+                        }
                         Controller::viewpage('./view/pages/deleteUserView.php');
                                 
-                    }
-                                            
+                    }                                
     }
                                 
 ?>
