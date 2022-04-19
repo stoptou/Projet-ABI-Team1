@@ -56,7 +56,15 @@ class Dashboard
         $results= new Database('abi');
         return $results->showUser($value);
     }
-    
-   
+
+    // Création de la requête suppression d'un utilisateur 15/04 Marine Mickael
+    public static function deleteUserDashboardById($id)
+    {
+        $results= new Database('abi');
+        $results->deleteUserById($id);
+        header('Location:./index.php?action=dashboard&successDel=true');
+        return $results;
+    }
+     
 }
 ?>

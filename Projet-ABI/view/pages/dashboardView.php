@@ -6,6 +6,7 @@ use \ABI\controller\Auth;
 use ABI\model\Database;
 
 
+
 $title='Tableau de bord';
 
 
@@ -40,7 +41,17 @@ ob_start();
                     </div>
                 <?php
                     }
+                
+                    else if(isset($_GET['successDel']))
+                    {
                 ?>
+                        <div class="alert alert-success">
+                           Utilisateur effacé avec succés!
+
+                        </div>
+                <?php
+                    }
+                    ?>
 
 <div class="row modif text-center mb-4">
         <div class="col">
@@ -60,7 +71,18 @@ ob_start();
                   <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action3=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
+                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
+                </li>   
+            </ul>
+               
+        </div>
+        <div class="col">
+            <ul class="nav nav flex-column">
+                <li class="nav-item">
+                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
                 </li>   
             </ul>
                
@@ -79,10 +101,16 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
+            <!-- <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
+            //     </li>
+            //  <li class="nav-item">
+            //      <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
+            // Lignes commentées 19/04/22 Mickaël -->
+                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
+                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=deleteUser">Supprimer un utilisateur</a>
+
                 </li>   
             </ul>
                
@@ -126,7 +154,16 @@ ob_start();
                         }
                                 
                     }
-                                            
+                    elseif($_GET['action3']==='deleteUser')
+                    {
+                        if(isset($_GET['id_user'])){
+                            $id = $_GET['id_user'];
+                            $results= new Database('abi');
+                            $results->deleteUserById($id);
+                        }
+                        Controller::viewpage('./view/pages/deleteUserView.php');
+                                
+                    }                                
     }
                                 
 ?>

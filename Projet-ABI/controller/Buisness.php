@@ -28,6 +28,8 @@ class Buisness
     
         return $result;
     }
+
+
     public static function viewSecteurs()
     {
         try{

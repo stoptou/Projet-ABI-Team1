@@ -62,6 +62,26 @@ class Client extends Database
         }
     }
 
+    // Ajoute de la requête pour supprimer un utilisateur 15/04 Marine Mickael
+    public function deleteUserById($id_user)
+    {
+        try
+        {
+            $req=parent::getPDO();
+            $result=$req->prepare('DELETE FROM utilisateur WHERE id_user=:id_user');
+            $result->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+            $result->execute();
+            
+            return $result->fetch();
+            
+
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }
+
  
 }
 
