@@ -91,17 +91,6 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
-                </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
-                </li>   
-            </ul>
-               
-        </div>
-        <div class="col">
-            <ul class="nav nav flex-column">
-              <li class="nav-item">
             <!-- <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
             //     </li>
             //  <li class="nav-item">
@@ -127,18 +116,18 @@ ob_start();
                     if($_GET['action3']==='dashboardList')
                     {
                         
-                        Controller::viewPage($root.'./view/pages/listView.php');
+                        Controller::viewPage($root.'/view/pages/listView.php');
                     }
                             
                 
                     elseif($_GET['action3']==='addUser')
                     {
-                        Controller::viewPage($root.'./view/pages/addUserView.php');
+                        Controller::viewPage($root.'/view/pages/addUserView.php');
                                 
                     }
                     elseif($_GET['action3']==='modifyUser')
                     {
-                        Controller::viewPage($root.'./view/pages/modifyUserView.php');
+                        Controller::viewPage($root.'/view/pages/modifyUserView.php');
                                 
                     }
                     elseif($_GET['action3']==='panelModifyUser')
@@ -147,7 +136,7 @@ ob_start();
                         {
                             $data = new Database('abi');
                             $result = $data->updateUser($_POST["id_user"], $_POST["first_name"], $_POST["last_name"], $_POST["email"]);
-                            Controller::viewPage($root.'./view/pages/listView.php');
+                            Controller::viewPage($root.'/view/pages/listView.php');
                         }
                         else
                         {

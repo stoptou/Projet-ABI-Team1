@@ -32,7 +32,7 @@
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
                 $.ajax({
-                    url: 'sendEmail.php',
+                    url: '/model/contactEnvoyer.php',
                     method: 'POST',
                     dataType: 'json',
                     data: {

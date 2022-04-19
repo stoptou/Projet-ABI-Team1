@@ -18,8 +18,8 @@ if(isset($_POST['name']) && isset($_POST['email'])){
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
-    $mail->Usernaime= "tonadressemail";
-    $mail->Password= 'tonmdp';
+    $mail->Username= "activebretagneinformatique@gmail.com";
+    $mail->Password= 'adminabi';
     $mail->Port = 465;
     $mail->SMTPSecure = "ssl";
 
@@ -27,7 +27,7 @@ if(isset($_POST['name']) && isset($_POST['email'])){
 
     $mail->isHTML(true);
     $mail->setFrom($email, $name);
-    $mail->addAdress("tonadressmail");
+    $mail->addAdress("activebretagneinformatique@gmail.com");
     $mail->Subject = ("$email ($subject)");
     $mail->Body = $body;
 
