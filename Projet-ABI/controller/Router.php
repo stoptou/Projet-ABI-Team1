@@ -46,6 +46,10 @@ if (isset($_GET['action'])) {
         {
             Controller::viewPage('./view/pages/charte.php');
         }
+        elseif($_GET['action'] == 'contactEnvoyer') 
+        {
+            Controller::viewPage('./view/pages/contactEnvoyer.php');
+        }
            
         elseif($_GET['action']=='dashboard')
         {

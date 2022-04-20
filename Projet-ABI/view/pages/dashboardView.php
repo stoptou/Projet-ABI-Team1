@@ -25,7 +25,7 @@ ob_start();
 
         </div>
         <div class="col text-right">
-        <a class="nav-link" href="./index.php?action=logOut" data-toggle="tooltip" title="Se déconnecter">Déconnexion<span class="p-3"><img class="logout"src=".public/IMG/" alt="Icone déconnexion à ajouter"></span></a>
+        <a class="nav-link" href="./index.php?action=logOut" data-toggle="tooltip" title="Se déconnecter">Déconnexion<span class="p-3"><img class="logout"src="./public/IMG/svg/svg/door-open.svg" alt="Icone déconnexion à ajouter"></span></a>
 
         </div>
 
@@ -58,7 +58,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image utilisateurs à créer"></a>
+                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/svg/svg/users-rectangle.svg" alt="Image utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=dashboardList">Afficher les utilisateurs</a>
@@ -69,7 +69,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/" alt="Image modifier utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/svg/svg/user-pen.svg" alt="Image modifier utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
@@ -80,7 +80,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/" alt="Image ajouter utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/svg/svg/user-plus.svg" alt="Image ajouter utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
@@ -96,7 +96,7 @@ ob_start();
             //  <li class="nav-item">
             //      <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
             // Lignes commentées 19/04/22 Mickaël -->
-                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/svg/svg/user-minus.svg" alt="Image supprimer utilisateurs à créer"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=deleteUser">Supprimer un utilisateur</a>

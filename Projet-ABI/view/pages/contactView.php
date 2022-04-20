@@ -4,27 +4,29 @@
     
         <center>
         <h4 class="sent-notification"></h4>
-        <form id="myForm">
+        <form id="myForm" action="index.php?action=contactEnvoyer" method="POST">
 </br>
         <h2>Contactez nous :</h2>
         <label>Nom</label>
-        <input id="name" type="text" placeholder="Entrez votre nom">
+        <input name="name" type="text" placeholder="Entrez votre nom">
         <br><br>
         <label>Email</label>
-        <input id="email" type="text" placeholder="Entrez votre email">
+        <input name="email" type="text" placeholder="Entrez votre email">
         <br><br>
         <label>Sujet</label>
-        <input id="subject" type="text" placeholder="Entrez le sujet">
+        <input name="subject" type="text" placeholder="Entrez le sujet">
 
         <p>Message</p>
-        <textarea id="body" rows="5" placeholder="Entrez votre message"></textarea> </br>
-        <button type="button" onclick="sendEmail()" value="Send An Email">Envoyer</button>
+        <textarea name="body" rows="5" placeholder="Entrez votre message"></textarea> </br>
+        <button type="submit" value="Send An Email">Envoyer</button>
     </form>
     </center>
 
+
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
-        function sendEmail() {
+        /* function sendEmail() {
             var name = $("#name");
             var email = $("#email");
             var subject = $("#subject");
@@ -32,7 +34,7 @@
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
                 $.ajax({
-                    url: '/model/contactEnvoyer.php',
+                    url: './view/page/contactEnvoyer.php',
                     method: 'POST',
                     dataType: 'json',
                     data: {
@@ -46,7 +48,7 @@
                     }
                 });
             }
-        }
+        } */
 
     function isNotEmpty(caller) {
         if (caller.val() == "") {

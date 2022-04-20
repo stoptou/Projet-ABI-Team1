@@ -17,24 +17,24 @@
     <header class='container'>
        <div class='row mt-4'>
             <div class='col p-4'>
-                <a href="index.php" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/" alt="Image Home à créer" width="100px" height="100px"></a>
+                <a href="index.php" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/svg/svg/house.svg" alt="Image Home à créer" width="100px" height="100px"></a>
             </div>
             <div class='col p-4'>
                 <ul class="nav flex-column text-center">
-                   <li><a class="" href="./index.php?action=buisness"><img src="./public/IMG/" alt="Image menu gestion commerciale a créer" class="gestion"></a></li>
+                   <li><a class="" href="./index.php?action=buisness"><img src="./public/IMG/svg/svg/handshake.svg" alt="Image menu gestion commerciale a créer" class="gestion"></a></li>
                    <li><a href="./index.php?action=buisness" class="nav-link">Gestion commerciale</a></li> 
                 </ul>
                 
             </div>
             <div class='col p-4'>         
                 <ul class="nav flex-column text-center">
-                    <li><a class="" href="gestion_rh.php"><img src="./public/IMG/" alt="Image menu gestion RH a créer" class="gestion"></a></li>
+                    <li><a class="" href="gestion_rh.php"><img src="./public/IMG/svg/svg/users-line.svg" alt="Image menu gestion RH a créer" class="gestion"></a></li>
                     <li><a href='#' class="nav-link">Gestion RH</a></li> 
                     </ul>
                 </div>
                 <div class="col p-4">
                 <ul class="nav flex-column text-center">
-                    <li><a class="" href="gestion_projets.php"><img src="./public/IMG/" alt="Image menu gestion des projets a créer"class="gestion"></a></li>
+                    <li><a class="" href="gestion_projets.php"><img src="./public/IMG/svg/svg/book-bookmark.svg" alt="Image menu gestion des projets a créer"class="gestion"></a></li>
                     <li><a href="#" class="nav-link">Gestion des projets</a></li> 
                 </ul>
             </div>
