@@ -28,28 +28,31 @@ if(isset($_POST['name']) && isset($_POST['email'])){
     //Utilisateur qui reçoit
     try{   
    
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->SMTPDebug = 0;
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username= "activebretagneinformatique@gmail.com";
     $mail->Password= 'adminabi';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
     // email contenu
 
     $mail->isHTML(true);
-    $mail->setFrom("activebretagneinformatique@gmail.com", 'abi');
+    $mail->setFrom("activebretagneinformatique@gmail.com", 'ABI');
     $mail->addAddress($email);
-    $mail->Subject = $subject;
-    $mail->Body = $body;
+    $mail->Subject = 'Votre email au sujet de ['.$subject.'] a été envoyé.';
+    $mail->Body = '<strong>Le mail envoyé contient : </strong></br>'.$body;
 
     $mail->send();
-
+        $send="yes";
     }
     catch(Exception $e){
-        echo "Le mail ne s'est pas envoyé";
+        $send = "no";
     }
-echo "grfgfdx";
 }
+
+header("Location: index.php?action=contact&send=".$send);
+die();
 ?>
