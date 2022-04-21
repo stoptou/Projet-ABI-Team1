@@ -1,3 +1,8 @@
+<?php
+if (isset($_GET['errorForm'])) {
+    echo($_GET['errorForm']);
+}
+?>
 
 <hr class="p-0 m-0">
 <div class="row w-75 mx-auto">

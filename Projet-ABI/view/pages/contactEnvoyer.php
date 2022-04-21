@@ -7,10 +7,6 @@ use PHPMailer\PHPMailer\SMTP;
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-
-//require ($root.'/vendor/PHPMailer/PHPMailer/src/PHPMailer.php');
-//require ($root.'/vendor/PHPMailer/PHPMailer/src/SMTP.php');
-//require ($root.'/vendor/PHPMailer/PHPMailer/src/Exception.php');
 require ($root.'/vendor/autoload.php');
 
 
