@@ -1,5 +1,8 @@
 <?php
 
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+require ($root.'./view/pages/contactEnvoyer.php');
+
 use ABI\model\Client;
 use ABI\model\Database;
 use ABI\model\Secteur;
@@ -47,10 +50,10 @@ switch ($_POST['form']) {
             $password = htmlentities($_POST['password']);
             $password = password_hash($password, PASSWORD_DEFAULT);
             $data = $data->addUser($_POST['first_name'], $_POST['last_name'], $_POST['email'], $_POST['password'], $_POST['role']);
-            header('Location:./index.php?action=dashboard&action3=dashboardList&successAdd=true');
+            header('Location: ./index.php?action=dashboard&action3=dashboardList&successAdd=true');
         }
         else {
-            header('Location:./index.php?action=dashboard&action3=addUser&errorForm='.$error);
+            header('Location: ./index.php?action=dashboard&action3=addUser&errorForm='.$error);
         }
         break;
     
@@ -58,10 +61,10 @@ switch ($_POST['form']) {
         if (!isset($error)) {
             $data = new Database('abi');
             $data = $data->updateUser($_POST['id_user'], $_POST['first_name'], $_POST['last_name'], $_POST['email']);
-            header('Location:./index.php?action=dashboard&action3=dashboardList&successModify=true');
+            header('Location: ./index.php?action=dashboard&action3=dashboardList&successModify=true');
         }
         else {
-            header('Location:./index.php?action=dashboard&action3=modifyUser&errorForm='.$error);
+            header('Location: ./index.php?action=dashboard&action3=modifyUser&errorForm='.$error);
         }
         break;
 
@@ -71,10 +74,10 @@ switch ($_POST['form']) {
             $sect = new Secteur('abi');
             $id_secteur = (int) $sect->getSecteur($_POST['secteur']);
             $result = $client->addClient($id_secteur, $_POST['raison_sociale'], $_POST['adresse'], $_POST['code_postal'], $_POST['ville'], $_POST['effectif'], $_POST['telephone']);
-            header('Location:./index.php?action=buisness&successAdd=true');
+            header('Location: ./index.php?action=buisness&successAdd=true');
         }
         else {
-            header('Location:./index.php?action=buisness&action2=addClient&errorForm='.$error);
+            header('Location: ./index.php?action=buisness&action2=addClient&errorForm='.$error);
         }
         break;
 
@@ -86,5 +89,15 @@ switch ($_POST['form']) {
     //         header('Location:./index.php?action=buisness&successModify=true');
     //     }
     //     break;
+
+    case 'contactForm':
+        if (!isset($error)) {
+            $send = sendMail($_POST["name"], $_POST["subject"], $_POST["email"], $_POST["body"]);
+            header('Location: ./index.php?action=contact&send='.$send);
+        }
+        else {
+            header('Location: ./index.php?action=contact&errorForm='.$error);
+        }
+        break;
 }
 ?>
