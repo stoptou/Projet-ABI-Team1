@@ -1,34 +1,136 @@
-<?php $title='Actualités'; ?>
+<?php
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=Paris&lang=fr&units=metric&appid=69aa0652946e6e5dccd1020284ae105d";
 
-<?php ob_start() ?>
+    $raw = file_get_contents($url);
+
+    $json = json_decode($raw);
+
+    $name = $json->name;
+
+    $weather = $json->weather[0]->main;
+    $desc = $json->weather[0]->description;
+
+    $temp = $json->main->temp;
+    $feel_like = $json->main->feels_like;
+
+    $speed = $json->wind->speed;
+    $deg = $json->wind->deg;
 
 
-<?php 
-      $heure = date('H:i'); 
 ?>
 
 
 
-<div  class = "text-center mb-4 p-4">
-    <?php echo 'Actualités'; ?>
+
+<?php ob_start() ?>
+
+<div>
+<?php $title='Actualité'; ?>
 </div>
+
+<?php 
+      $hour = date('H:i'); 
+?>
+
+<div class= "containeur text-center">
+    <div class = "lead">
+        <div class ="h1">
+    <?php echo 'Actualité'; ?>
+        </div>
+    </div>
+</div>
+
+
+<div class = "containeur text-center py-5">
+    <div class = "bg-warning border mt-2 rounded-circle">
+        <h2>La Météo du jour à <?php echo "$name :"; ?></h2>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+            <div class="card p-4">
+                <div class="d-flex">
+                    <h6 class="flex-grow-1"> <?php echo $name; ?>
+                    </h6>
+                    <?php echo $hour; ?>
+                </div>
+                <div class="d-flex flex-column temp mt-5 mb-3">
+                    <h1 class="mb-0 font-weight-bold" id="heading"> <?php echo $temp;?>° C </h1> <span class="small grey"> <?php echo $desc ?></span>
+                </div>
+                <div class="d-flex">
+                    <div class="temp-details flex-grow-1">
+                        <p class="my-1"> <img src="https://i.imgur.com/B9kqOzp.png" height="17px"> <span> <?php echo $speed; ?> km/h </span> </p>
+                    </div>
+                    <div class = "width=100px"> 
+                        <?php 
+                    switch($weather)
+                    {
+                        case "Clear" :
+                            echo '<img src="" alt="">';
+                            break;
+                        
+                        case "Drizzle" :
+                            echo '<img src="" alt="">';
+                            break;
+
+                        case "Rain" :
+                            echo '<img src="" alt="">';
+                            break;
+
+                        case "Cloud" :
+                            echo '<img src="" alt="">';
+                            break;
+
+                        case "Thunderstorm" :
+                            echo '<img src="" alt="">';
+                            break;
+
+                        case "Snow" :
+                            echo '<img src="" alt="">';
+                            break;
+
+                    }
+                        ?>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<?php  '<img src="https://thumbs.dreamstime.com/z/le-soleil-heureux-25897824.jpg" alt="">' ;?>
+
+
+
+
 <!-- affichage date et heure -->
-<div >
+<div class = "text-left">
     <?php 
         setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
         echo (strftime("%A %d %B"));
         echo '<br>';
-        echo $heure 
+        echo $hour 
     ?>
 </div>
 
+
+
+
 <!-- Début du premier article -->
-<div class = 'height: 200px'>
+<div class = 'height: 100px'>
+
     <h2>Quand les femmes s'engagent pour les femmes</h2>
     <figure>
-        <img src="https://www.touteleurope.eu/wp-content/uploads/2021/03/journee_droits_des_femmes_2021.jpg" alt="Des femmes de tous horizons en dessin">
-    
-        <figcaption>Active Bretagne travaille avec de nombreux collectifs de femmes engagées</figcaption> 
+        <img src="https://www.touteleurope.eu/wp-content/uploads/2021/03/journee_droits_des_femmes_2021.jpg" alt="Des femmes de tous horizons en dessin"
+        class="col-6">
+    <div class="font-italic">
+        <figcaption  class ="">Active Bretagne travaille avec de nombreux collectifs de femmes engagées</figcaption> 
+        </div>
     </figure>
     <p>
     Chaque jour, les équipes de France Active accompagnent des femmes entrepreneures dans leur projet.
@@ -71,9 +173,12 @@
 <div>
     <h2>L'emploi au service du handicap en Bretagne</h2>
     <figure>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrXiAwaKGsDZz-VFhr2nXbbtFDA5GCLBqNfQ&usqp=CAU" alt="Dessin de plusieurs personnes, dont un en chaise roulante, travaillants sur des ordinateurs">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrXiAwaKGsDZz-VFhr2nXbbtFDA5GCLBqNfQ&usqp=CAU" alt="Dessin de plusieurs personnes, dont un en chaise roulante, travaillants sur des ordinateurs"
+        class="col-7">
     
-        <figcaption>Active Bretagne s'engage à créer des postes pour les travailleurs handicapés</figcaption> 
+        <div class ="font-italic">
+        <figcaption class ="col-7">Active Bretagne s'engage à créer des postes pour les travailleurs handicapés</figcaption> 
+        </div>
     </figure>
 
     <p>
@@ -120,43 +225,57 @@
 
 <h2>Plus d'articles</h2>
 
-<div>
+<div class = "containeur">
+    <div class = "row custom-line">
+        <div class="col align-self-start">
+            <div class= ".w-30">
+
 <a  href="https://www.francetvinfo.fr/replay-radio/c-est-mon-boulot/la-france-manque-de-developpeurs-informatiques-les-idees-recues-sur-ces-metiers-qui-recrutent-restent-tenaces_5052565.html"
     title = 'France info'
     target = _blank
 >
+
     <img src="https://www.francetvinfo.fr/pictures/M5ZECU8LPRF3661Xv5abqD3rbOQ/0x306:5955x3656/944x531/filters:format(webp)/2022/04/12/phprOCXGg.jpg" 
-    alt="">
-    <figcaption>La France manque de développeurs informatiques : les idées reçues sur ces métiers qui recrutent restent tenaces</figcaption>
+    alt=""
+    class="col-10">
+    <figcaption class = "col-10">La France manque de développeurs informatiques : les idées reçues sur ces métiers qui recrutent restent tenaces</figcaption>
 </a>
 </div>
+        </div>
 
-<div>
+        <div class="col align-self-start">
+            <div class= ".w-25">
 <a  href="https://start.lesechos.fr/travailler-mieux/metiers-reconversion/ancien-chauffeur-de-taxi-au-soudan-je-suis-devenu-developpeur-web-en-france-1400926" 
     title = 'Les echos' 
     target = _blank
 >
     
     <img src="https://media.lesechos.com/api/v1/images/view/6258fc1b4eed857e3a749406/1280x720-webp/0701359404589-web-tete.webp" 
-    alt="">
-    <figcaption>Témoignage : << Ancien chauffeur de taxi au Soudan, je suis devenu développeur web en France >></figcaption>
+    alt=""
+    class="col-10">
+    <figcaption class = "col-10">Témoignage : << Ancien chauffeur de taxi au Soudan, je suis devenu développeur web en France >></figcaption>
 </a>
 
+    </div>
+        </div>
 
-</div>
-
-<div>
+        <div class="col align-self-start">
+            <div class= ".w-25">
 <a  href="https://www.lemonde.fr/campus/article/2022/04/03/rock-stars-du-marche-de-l-emploi-les-developpeurs-web-craignent-de-devenir-les-ouvriers-d-hier_6120349_4401467.html"
     title = 'Le monde' 
     target = _blank
+
 >
 
     <img src="https://img.lemde.fr/2022/03/28/0/0/1200/653/664/0/75/0/9d2b23b_1648468470787-eewegebxuaex4sg.jpeg" 
-    alt="">
-    <figcaption>Les développeurs Web, << rock stars >> du marché de l'emploi, craignent de devenir les << ouvriers d'hier >></figcaption>
+    alt=""
+    class="col-10">
+    <figcaption class = "col-10">Les développeurs Web, << rock stars >> du marché de l'emploi, craignent de devenir les << ouvriers d'hier >></figcaption>
 </a>
+            </div>
+        </div>
+    </div>
 </div>
-
 
 <?php $content = ob_get_clean(); ?>
 
