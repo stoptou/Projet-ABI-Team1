@@ -1,6 +1,8 @@
 <?php
 
+use ABI\model\Client;
 use ABI\model\Database;
+use ABI\model\Secteur;
 
 foreach ($_POST as $key => $value) {
     $value = trim($value);
@@ -10,13 +12,25 @@ foreach ($_POST as $key => $value) {
     switch ($key) {
         case 'email':
             if ((!filter_var($value, FILTER_VALIDATE_EMAIL))) {
-                $error = "Email pas valide";
+                $error = "L'email n'est pas valide";
             }
             break;
         
         case 'password':
             if (strlen($value) < 8) {
-                $error = "Mot de passe trop court";
+                $error = "Le mot de passe est trop court. Au moins 8 caractères";
+            }
+            break;
+
+        case 'code_postal':
+            if (!is_int((int) $value) || strlen((string) $value) != 5) {
+                $error = "Le code postal doit contenir exactement 5 chiffres";
+            }
+            break;
+        
+        case 'telephone':
+            if (!is_int((int) $value) || strlen((string) $value) != 10) {
+                $error = "Le numéro de téléphone doit contenir exactement 10 chiffres";
             }
             break;
     }
@@ -51,25 +65,26 @@ switch ($_POST['form']) {
         }
         break;
 
-    // case 'addClient':
-    //     if (!isset($error)) {
-    //         header('Location:./index.php?action=buisness&successAdd=true');
-    //     }
-    //     else {
-    //         header('Location:./index.php?action=buisness&successAdd=true');
-    //     }
-    //     break;
+    case 'addClient':
+        if (!isset($error)) {
+            $client = new Client('abi');
+            $sect = new Secteur('abi');
+            $id_secteur = (int) $sect->getSecteur($_POST['secteur']);
+            $result = $client->addClient($id_secteur, $_POST['raison_sociale'], $_POST['adresse'], $_POST['code_postal'], $_POST['ville'], $_POST['effectif'], $_POST['telephone']);
+            header('Location:./index.php?action=buisness&successAdd=true');
+        }
+        else {
+            header('Location:./index.php?action=buisness&action2=addClient&errorForm='.$error);
+        }
+        break;
 
     // case 'modifyClient':
     //     if (!isset($error)) {
-    //         header('Location:./index.php?action=buisness&successAdd=true');
+    //         header('Location:./index.php?action=buisness&successModify=true');
     //     }
     //     else {
-    //         header('Location:./index.php?action=buisness&successAdd=true');
+    //         header('Location:./index.php?action=buisness&successModify=true');
     //     }
     //     break;
-}
-if (isset($error)) {
-    echo($error);
 }
 ?>

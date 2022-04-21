@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-use ABI\controller\Buisness;
 use ABI\controller\Controller;
 use ABI\controller\Dashboard;
 require ('./controller/Controller.php');
@@ -64,44 +63,25 @@ if (isset($_GET['action'])) {
                                                       
                if(isset($_POST['emailLog'])&& isset($_POST['passwordLog']))
                {
-                  
                      Dashboard::checkUser(htmlentities($_POST['emailLog']),htmlentities($_POST['passwordLog']));
-                  
                }
               
                else
                {
-               Controller::viewPage('./view/pages/dashboardView.php');
+                Controller::viewPage('./view/pages/dashboardView.php');
                }
-
         }
-         elseif ($_GET['action']=='logOut')
-         {
+        elseif ($_GET['action']=='logOut')
+        {
             Controller::logOut();
-         }
-         elseif($_GET['action']=='buisness')
-         {
-            if((!empty($_POST['secteur'])&&!empty($_POST['raison_sociale'])&&!empty($_POST['adresse'])
-               &&!empty($_POST['code_postale'])&&!empty($_POST['ville'])
-               &&!empty($_POST['effectif'])&&!empty($_POST['telephone'])))
-            {
-               Buisness::addClientBuisness(  htmlentities($_POST['secteur']),
-                                             htmlentities($_POST['raison_sociale']),
-                                             htmlentities($_POST['adresse']),
-                                             htmlentities($_POST['code_postale']),
-                                             htmlentities($_POST['ville']),
-                                             htmlentities($_POST['effectif']),
-                                             htmlentities($_POST['telephone']));
-            }
-            else
-            {
-                Controller::viewPage('./view/pages/buisnessView.php');
-            }
-         }
+        }
+        elseif($_GET['action']=='buisness')
+        {
+            Controller::viewPage('./view/pages/buisnessView.php');
+        }
           
         else
         {
-        
            Controller::viewPage('./view/pages/indexView.php');
         }
 

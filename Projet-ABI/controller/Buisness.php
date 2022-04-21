@@ -19,17 +19,6 @@ class Buisness
         return $results->getClients();
        
     }
-    public static function addClientBuisness($secteur, $raison_sociale, $adresse, $code_postale, $ville, $effectif, $telephone)
-    {
-        $results= new Client('abi');
-        $sect=new Secteur('abi');
-        $id_secteur=(int) $sect->getSecteur($secteur);
-        $result=$results->addClient($id_secteur,$raison_sociale,$adresse,$code_postale,$ville,$effectif, $telephone);
-        header('Location:./index.php?action=buisness&successAdd=true');
-    
-        return $result;
-    }
-
 
     public static function viewSecteurs()
     {
