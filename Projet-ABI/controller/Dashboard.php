@@ -44,13 +44,10 @@ class Dashboard
             header('Location:./index.php?action=connexion&error=true');
         }
     }
-    public static function addUserDashboard($first_name, $last_name, $email, $password, $role)
+
+    public function degage_de_la()
     {
         $results= new Database('abi');
-        $result=$results->addUser($first_name,$last_name,$email,$password,$role);
-        header('Location:./index.php?action=dashboard&successAdd=true');
-       
-        return $result;
     }
 
 

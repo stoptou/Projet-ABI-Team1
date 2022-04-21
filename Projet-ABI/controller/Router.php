@@ -10,10 +10,13 @@ require ('./controller/Dashboard.php');
 
 if (isset($_GET['action'])) {
 
-
         if ($_GET['action']=='home')
         {
             Controller::viewPage('./view/pages/indexView.php');
+        }
+        elseif($_GET['action']=='formControl')
+        {
+            Controller::viewPage('./view/pages/formControl.php');
         }
         elseif($_GET['action']=='ABIgroup')
         {
@@ -32,16 +35,13 @@ if (isset($_GET['action'])) {
             Controller::viewPage('./view/pages/contactView.php');
         }
         elseif($_GET['action']=='connexion')
-        
         { 
             Controller::viewPage('./view/pages/connexionView.php');
-           
         }
         elseif($_GET['action'] == 'mentionsLegales') 
         {
             Controller::viewPage('./view/pages/mentionsLegales.php');
         }
-
         elseif($_GET['action'] == 'charte') 
         {
             Controller::viewPage('./view/pages/charte.php');
@@ -59,17 +59,6 @@ if (isset($_GET['action'])) {
                   
                      Dashboard::checkUser(htmlentities($_POST['emailLog']),htmlentities($_POST['passwordLog']));
                   
-               }
-               elseif(!empty($_POST['first_name'])&&!empty($_POST['last_name'])&&
-                     !empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['role']))
-               {
-                  $pass= htmlentities($_POST['password']);
-                  $pass= password_hash($pass, PASSWORD_DEFAULT);
-                  Dashboard::addUserDashboard(htmlentities($_POST['first_name']),
-                                             htmlentities($_POST['last_name']),
-                                             htmlentities($_POST['email']),
-                                             $pass,
-                                             htmlentities($_POST['role']));
                }
               
                else

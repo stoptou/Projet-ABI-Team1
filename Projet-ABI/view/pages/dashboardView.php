@@ -37,19 +37,28 @@ ob_start();
                     {
                 ?>
                     <div class="alert alert-success">
-                           Utilisateur ajouté avec succés!
+                        Utilisateur ajouté avec succès!
 
                     </div>
                 <?php
                     }
                 
-                    else if(isset($_GET['successDel']))
+                    if(isset($_GET['successDel']))
                     {
                 ?>
                         <div class="alert alert-success">
-                           Utilisateur effacé avec succés!
+                        Utilisateur effacé avec succès!
 
                         </div>
+                <?php
+                    }
+                    if(isset($_GET['successModify']))
+                    {
+                ?>
+                    <div class="alert alert-success">
+                        Utilisateur modifié avec succès!
+
+                    </div>
                 <?php
                     }
                     ?>
@@ -132,16 +141,7 @@ ob_start();
                     }
                     elseif($_GET['action3']==='panelModifyUser')
                     {
-                        if(isset($_POST["id_user"]))
-                        {
-                            $data = new Database('abi');
-                            $result = $data->updateUser($_POST["id_user"], $_POST["first_name"], $_POST["last_name"], $_POST["email"]);
-                            Controller::viewPage($root.'/view/pages/listView.php');
-                        }
-                        else
-                        {
                             Controller::viewPage($root.'/view/pages/panelModifyUser.php');
-                        }
                                 
                     }
                     elseif($_GET['action3']==='deleteUser')
