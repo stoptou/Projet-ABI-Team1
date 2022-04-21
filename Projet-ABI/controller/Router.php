@@ -31,8 +31,16 @@ if (isset($_GET['action'])) {
             Controller::viewPage('./view/pages/offerView.php');
         }
         elseif($_GET['action']=='contact')
-        {
+        {   
+            if (isset($_GET['send'])){
+                if ($_GET['send']=='yes') {
+                Controller::viewPage('./view/pages/contactView.php');
+                } elseif ($_GET['send']=='no'){
+                Controller::viewPage('./view/pages/contactView.php');
+                } 
+        } else {
             Controller::viewPage('./view/pages/contactView.php');
+        }
         }
         elseif($_GET['action']=='connexion')
         { 
