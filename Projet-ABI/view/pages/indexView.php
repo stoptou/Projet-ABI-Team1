@@ -1,9 +1,50 @@
 <?php $title='Accueil'; ?>
 <?php ob_start(); ?>
 
-<div class="px-0 mx-0 d-none d-md-block banniere">
-                        <img class="w-100" alt="banniere à créer" src="./public/IMG/Banniere.png" height="300px">
-                </div>
+<div class="px-0 mx-0 d-none d-md-block banniere">     
+    <div class="container container-fluid my-2" >
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3500">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" >
+                <img class="img-responsive d-block w-100" src="./public/IMG/carousel/Banniere.png" height="450px">
+           
+        </div>
+        <div class="carousel-item" >
+            <img class="d-block w-100" src="./public/IMG/carousel/performance.png" height="450px">
+            
+        </div>
+        <div class="carousel-item" >
+            <img class="d-block w-100" src="./public/IMG/carousel/ai.jpg" height="450px">
+           
+        </div>
+        <div class="carousel-item" >
+            <img class="d-block w-100" src="./public/IMG/carousel/cSécurité.png" height="450px">
+           
+        </div>
+        <div class="carousel-item" >
+            <img class="d-block w-100" src="./public/IMG/carousel/bigData.png" height="450px">
+           
+        </div>
+        <div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>            
+</div>
+
                 <div class="row mx-0">
 
                
