@@ -1,19 +1,21 @@
 <?php
+    // Lien et variables pour obtenir la météo de Paris
+    
     $url = "https://api.openweathermap.org/data/2.5/weather?q=Paris&lang=fr&units=metric&appid=69aa0652946e6e5dccd1020284ae105d";
 
     $raw = file_get_contents($url);
 
     $json = json_decode($raw);
 
-    $name = $json->name;
+    $name = $json->name; // Nom de la ville
 
-    $weather = $json->weather[0]->main;
-    $desc = $json->weather[0]->description;
+    $weather = $json->weather[0]->main; // Météo
+    $desc = $json->weather[0]->description; // Description du ciel
 
-    $temp = $json->main->temp;
-    $feel_like = $json->main->feels_like;
+    $temp = $json->main->temp; //Température
+    $feel_like = $json->main->feels_like; // Ressenti
 
-    $speed = $json->wind->speed;
+    $speed = $json->wind->speed; // Vitesse du vent
     $deg = $json->wind->deg;
 
 
@@ -25,29 +27,29 @@
 <?php ob_start() ?>
 
 <div>
-<?php $title='Actualité'; ?>
+<?php $title='Actualité';  // Titre de l'onglet ?>
 </div>
 
 <?php 
-      $hour = date('H:i'); 
+      $hour = date('H:i'); // Création de variabe pour obtenir Heure : Minutes 
 ?>
 
 <div class= "containeur text-center">
     <div class = "lead">
         <div class ="h1">
-    <?php echo 'Actualité'; ?>
+    <?php echo 'Actualité'; ?> <!-- Titre en haut de la page -->
         </div>
     </div>
 </div>
 
 
 <div class = "containeur text-center py-5">
-    <div class = "bg-warning border mt-2 rounded-circle">
-        <h2>La Météo du jour à <?php echo "$name :"; ?></h2>
+    <div class = " border mt-2 rounded-circle">
+    <marquee direction="left" scrollamount="20">La Météo du jour à <?php echo "$name :";  // Insérer le nom de la ville de Paris ?></marquee>
 </div>
 
 
-
+<!-- Afficher la case qui affiche la météo de Paris -->
 
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -65,32 +67,34 @@
                     <div class="temp-details flex-grow-1">
                         <p class="my-1"> <img src="https://i.imgur.com/B9kqOzp.png" height="17px"> <span> <?php echo $speed; ?> km/h </span> </p>
                     </div>
-                    <div class = "width=100px"> 
+                    <div class = ""> 
                         <?php 
+
+                        // Afficher des pictogramme selon la météo du jour (soleil, bruine, pluie, nuageuse, orage, neige)
                     switch($weather)
                     {
                         case "Clear" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static1.mclcm.net/lcm2018/int/picto/jour/c0000.png" alt="" style = "">';
                             break;
                         
                         case "Drizzle" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static1.mclcm.net/lcm2018/int/picto/jour/p0010.png" alt="">';
                             break;
 
                         case "Rain" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static3.mclcm.net/lcm2018/int/picto/jour/p0040.png" alt="">';
                             break;
 
                         case "Cloud" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static1.mclcm.net/lcm2018/int/picto/jour/c0030.png" alt="">';
                             break;
 
                         case "Thunderstorm" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static2.mclcm.net/lcm2018/int/picto/jour/c0090.png" alt="">';
                             break;
 
                         case "Snow" :
-                            echo '<img src="" alt="">';
+                            echo '<img src="https://static2.mclcm.net/lcm2018/int/picto/jour/p0085.png" alt="">';
                             break;
 
                     }
@@ -177,7 +181,7 @@
         class="col-7">
     
         <div class ="font-italic">
-        <figcaption class ="col-7">Active Bretagne s'engage à créer des postes pour les travailleurs handicapés</figcaption> 
+        <figcaption class ="">Active Bretagne s'engage à créer des postes pour les travailleurs handicapés</figcaption> 
         </div>
     </figure>
 
