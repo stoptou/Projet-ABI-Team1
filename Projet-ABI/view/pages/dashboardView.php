@@ -63,11 +63,11 @@ ob_start();
                     }
                     ?>
 
-    <div class="row modif text-center mb-4">
+    <div class="row text-center mb-4">
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/svg/svg/users-rectangle.svg" alt="Image utilisateurs à créer"></a>
+                  <a href="./index.php?action=dashboard&amp;action3=dashboardList" class="nav-link"><img src="./public/IMG/svg/svg/users-rectangle.svg" alt="Image utilisateurs à créer" height="50px" width="50px"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=dashboardList">Afficher les utilisateurs</a>
@@ -78,7 +78,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/svg/svg/user-pen.svg" alt="Image modifier utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=modifyUser" class="nav-link"><img src="./public/IMG/svg/svg/user-pen.svg" alt="Image modifier utilisateurs à créer" height="50px" width="50px"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=modifyUser">Modifier les utilisateurs</a>
@@ -89,7 +89,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/svg/svg/user-plus.svg" alt="Image ajouter utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=addUser" class="nav-link"><img src="./public/IMG/svg/svg/user-plus.svg" alt="Image ajouter utilisateurs à créer" height="50px" width="50px"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=addUser">Ajouter un utilisateur</a>
@@ -100,12 +100,7 @@ ob_start();
         <div class="col">
             <ul class="nav nav flex-column">
               <li class="nav-item">
-            <!-- <a href="../index.php?action=dashboardList" class="nav-link"><img src="./public/IMG/" alt="Image supprimer utilisateurs à créer"></a>
-            //     </li>
-            //  <li class="nav-item">
-            //      <a class="nav-link" href="../index.php?action=dashboardList">Supprimer un utilisateur</a>
-            // Lignes commentées 19/04/22 Mickaël -->
-                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/svg/svg/user-minus.svg" alt="Image supprimer utilisateurs à créer"></a>
+                  <a href="../index.php?action=dashboard&amp;action3=deleteUser" class="nav-link"><img src="./public/IMG/svg/svg/user-minus.svg" alt="Image supprimer utilisateurs à créer"  height="50px" width="50px"></a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="../index.php?action=dashboard&amp;action3=deleteUser">Supprimer un utilisateur</a>

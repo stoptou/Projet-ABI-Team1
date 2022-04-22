@@ -15,22 +15,22 @@
 <body>
     <div class="container-fluid px-0">
         <header class="container px-0 mt-3">
-            <div class="row logo mx-0 d-flex align-items-center">
+            <div class="row logo mx-0 d-flex align-items-center justify-content-center">
                 <div class="col-2 p-2">
                     <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:100% ></a>                   
                 </div>
 
-                <div class="col-6 mt-2 pt-2 text-center d-md-block d-none">
+                <div class="col-6 mt-2 pt-2 text-center">
                     <h4 class="slogan">ACTIVE BRETAGNE INFORMATIQUE</h4>
                     <h5 class="sloganB">Un nouveau monde en "Tique"</h5>
 
                 </div>
                 <!-- menu burger-->
-                <div class="col-2 d-md-none d-block dropdown dropleft">
+                <div class="col-2 d-md-none d-block">
                     <img alt='menu-burger' src="./public/IMG/menu-burger.png" class="img-fluid icone" width="100%" data-toggle="dropdown">
                         <div class="dropdown-menu">
                             <!--liens a ajouter -->
-                            <a class="dropdown-item" href="/index.php">Accueil</a>
+                            <a class="dropdown-item" href="/index.php?action=home">Accueil</a>
 
                             <a class="dropdown-item" href="../index.php?action=ABIgroup">Groupe ABI</a>
                             <a class="dropdown-item" href="./index.php?action=actuality">Actualité</a>
@@ -39,10 +39,45 @@
 
                         </div> 
                 </div>
-                <div class="col-2 d-md-none d-block">
-                   <img alt="Icone profil à ajouter" src="./public/IMG/" class="img-fluid icone" width="100%"> 
+                <div class="col d-md-none d-block text-center">
 
-                </div>            
+                <div class="row align-items-center">
+                    <div class="col">
+                        <?php 
+                        
+                        if (!empty($_SESSION)) {
+                            $data = new Database('abi');
+                            $userRole = $data->getUser((int) $_SESSION['id']);
+
+                            if($userRole[0]['role'] == "Administrateur") {?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.php?action=dashboard">Tableau de Bord</a>
+                                </li>
+                            <?php } ?>
+
+                            <?php if($userRole[0]['role'] == "Commercial") {?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.php?action=buisness">Tableau de Bord</a>
+                                </li>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col">
+                            <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=logOut'):?> active <?php endif?>">
+                                <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=logOut">Déconnexion</a>
+                            </li>
+                        <?php }
+
+                        else { ?>
+                            <li class="nav-item espace-membre d-flex<?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=connexion'):?> active <?php endif?>">
+                                <i class="fas fa-user-alt p-2 mt-1 connexion"></i><a class="nav-link" href="./index.php?action=connexion">Connexion</a>
+                            </li>
+                        <?php 
+                        } ?>
+
+                        </div>
+                    </div>     
+                </div>       
                 
             </div>
             <hr class="my-0 py-0">

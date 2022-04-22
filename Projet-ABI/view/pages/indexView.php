@@ -1,9 +1,9 @@
 <?php $title='Accueil'; ?>
 <?php ob_start(); ?>
 
-<div class="px-0 mx-0 d-none d-md-block banniere">     
+<div class="px-0 mx-0 d-md-block banniere">
     <div class="container container-fluid my-2" >
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3500">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -56,7 +56,6 @@
 
                         <!--Faire le liens du bouton avec GROUP ABI-->
                         <a href="index.php?action=ABIgroup"><button class="btn btn-primary">Notre groupe</button></a>
-                        
 
                     </div>
                     <div class="col-md-2">
