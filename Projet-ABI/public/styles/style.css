@@ -205,3 +205,6 @@ input:focus{
     justify-content: center;
 }
 
+.active {
+    color: #E78810;
+}

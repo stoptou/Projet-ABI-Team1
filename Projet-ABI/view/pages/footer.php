@@ -4,22 +4,22 @@
                         <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:50% ></a>
                             <!-- <img class="img-fluid" alt="logo a créer" src="./public/IMG/.png"> -->
                         </div>
-                        <div class="navbar col-md-4 col-12 text-center">
-                            <ul class="navbar-nav text-center">
+                        <div class="navbar col-md-4 col-12 center">
+                            <ul class="navbar-nav center">
                                 <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME']==='/charte.php'):?> active <?php endif?>">
                                     <a href="index.php?action=charte"class='nav-link'>Notre Charte</a>
                                 </li>
                                 <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME']==='/contact.php'):?> active <?php endif?>">
                                     <a href="index.php?action=contact" class='nav-link'>Contactez nous</a>
                                 </li>
-                                <li class="footer-link nav-item <?php if ($_SERVER['SCRIPT_NAME'] === '/mentionsLegales.php'):?> active <?php endif?>">
+                                <li class="footer-link nav-item<?php if ($_SERVER['SCRIPT_NAME'] === '/mentionsLegales.php'):?> active <?php endif?>">
                                     <a href="index.php?action=mentionsLegales" class='nav-link'>Mentions légales</a>
                                 </li>    
                             </ul>
 
                         </div>
-                        <div class="col-md-4 col-12">
-                            <img alt="Image à trouver" src="./public/IMG/">
+                        <div class="col-md-4 col-12 center">
+                            <img alt="Image à trouver" src="./public/IMG/tete.jpg">
 
                         </div>
 
