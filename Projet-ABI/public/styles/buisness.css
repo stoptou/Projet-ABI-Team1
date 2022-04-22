@@ -1,6 +1,6 @@
 body{
     box-sizing: border-box;
-    background: url('../IMG/background.jpg') no-repeat;
+    background-color: #FDF6EC;
     background-size: cover;
     text-decoration: none;
     list-style: none;
@@ -14,7 +14,7 @@ body{
 
 section
 {
-    background:  #fff;
+    background:  #F3E9DD;
     min-height: 800px;
 }
 footer
@@ -28,15 +28,15 @@ footer
 }
 .navbar-item a
 {
-    color: #004279;
+    color: #483434;
     font-weight: bold;
     
 }
 .lateral img
 {
     border-radius: 25%;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 85px;
 }
 .lateral img:hover
 {
@@ -54,7 +54,7 @@ footer
 }
 .client-view
 {
-    box-shadow: 2px 1px 5px #787879;
+    box-shadow: 2px 1px 5px #483434;
     border-radius: 5px;
 }
 table
@@ -62,22 +62,22 @@ table
     font-size: 16px;
 }
 table th{
-    color: #747474;
+    color: #483434;
     background-color: #ECECEC;
    
 }
 h3
 {
-    color: #E78810;
+    color: #483434;
     
 }
 label
 {
-    color: #004279;
+    color: #483434;
     font-weight: 600;
 }
 label:hover{
-    color: #E78810 ;
+    color: #DAB88B ;
     transform: translateX(3px);
     transition: .2s ease;
 

@@ -12,15 +12,21 @@
  
     <title><?=$title; ?></title>
 </head>
+
+<style>
+    .headerr {
+        background-color : #F3E9DD;
+    }
+</style>
 <body>
     <div class="container-fluid px-0">
         <header class="container px-0 mt-3">
             <div class="row logo mx-0 d-flex align-items-center">
-                <div class="col-2 p-2">
+                <div class="col-2 p-2 headerr">
                     <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:100% ></a>                   
                 </div>
 
-                <div class="col-6 mt-2 pt-2 text-center d-md-block d-none">
+                <div class="headerr col-10 pt-3 text-center d-md-block d-none">
                     <h4 class="slogan">ACTIVE BRETAGNE INFORMATIQUE</h4>
                     <h5 class="sloganB">Un nouveau monde en "Tique"</h5>
 
