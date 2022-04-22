@@ -15,8 +15,8 @@ class Client extends Database
         try
         {
             $req=parent::getPDO()->query('SELECT * FROM clients');
-            $users=$req->fetchAll();
-            return $users;
+            $clients=$req->fetchAll();
+            return $clients;
         }
         catch(Exception $e)
         {
@@ -29,7 +29,7 @@ class Client extends Database
         try
         {
             $req=parent::getPDO();
-            $result=$req->prepare('SELECT IDSECT FROM secteur_activite WHERE activite=:id_client');
+            $result=$req->prepare('SELECT * FROM clients WHERE IDCLIENT=:id_client');
             $result->bindValue(':id_client', $id_client, PDO::PARAM_INT);
             $result->execute();
             
@@ -61,7 +61,45 @@ class Client extends Database
             die($e->getMessage());
         }
     }
-
+ // (Eric)  Update données client
+ public function updateClient($id_client,$id_secteur,$raison_sociale,$adresse,$code_postal,$ville,$effectif,$telephone)
+ {
+     try
+     {
+        $req= $this->getPDO()->prepare('UPDATE clients SET IDCLIENT=:id_client, IDSECT=:id_secteur, RAISONSOCIALE=:raison_sociale, ADRESSECLIENT=:adresse, CODEPOSTALCLIENT=:code_postal, VILLECLIENT=:ville,  EFFECTIF=:effectif, TELEPHONECLIENT=:telephone WHERE IDCLIENT=:id_client');
+       
+        $req->bindValue(':id_client', $id_client, PDO::PARAM_INT);
+        $req->bindValue(':id_secteur', $id_secteur, PDO::PARAM_INT);
+        $req->bindValue(':raison_sociale', $raison_sociale, PDO::PARAM_STR);
+        $req->bindValue(':adresse', $adresse, PDO::PARAM_STR);
+        $req->bindValue(':code_postal', $code_postal, PDO::PARAM_STR);
+        $req->bindValue(':ville', $ville, PDO::PARAM_STR);
+        $req->bindValue(':effectif', $effectif, PDO::PARAM_INT);
+        $req->bindValue(':telephone', $telephone, PDO::PARAM_INT);
+        $req->execute();
+ }
+     catch(Exception $e)
+     {
+         die($e->getMessage());
+     }
+ }
+ 
+ // (Eric) Suppression client (OK)
+ public function delClient($IDCLIENT)
+ {
+     try
+     {
+         $req=parent::getPDO();
+         $result=$req->prepare('DELETE FROM clients WHERE IDCLIENT=:IDCLIENT');
+         $result->bindValue(':IDCLIENT', $IDCLIENT, PDO::PARAM_INT);
+         $result->execute();            
+         return $result->fetch();        
+     }
+     catch(Exception $e)
+     {
+         die($e->getMessage());
+     }        
+ }
     // Ajoute de la requête pour supprimer un utilisateur 15/04 Marine Mickael
     public function deleteUserById($id_user)
     {

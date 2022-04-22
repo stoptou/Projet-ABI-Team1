@@ -1,5 +1,8 @@
 <?php
 use \ABI\controller\Controller;
+use ABI\model\Client;
+
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
 ?>
 <div class="col client-view my-4 ml-2 mr-4">
@@ -9,6 +12,14 @@ use \ABI\controller\Controller;
                 ?>
                     <div class="alert alert-success mt-4">
                            Client ajouté avec succés!
+                           </div>
+                <?php
+                    }
+                    else if(isset($_GET['successDel']))
+                    {
+                ?>
+                        <div class="alert alert-success">
+                           Client effacé avec succés!
 
                     </div>
                 <?php
@@ -35,10 +46,40 @@ if(isset($_GET['action2']))
                     }
                     elseif($_GET['action2']==='detailClient')
                     {
-                        Controller::viewPage('./view/pages/detailClientView.php');
+                        Controller::viewPage('./view/pages/panelModifyClient.php');             
+                    }
+                    elseif($_GET['action2']==='delClient')
+                    {
+                        if(isset($_GET['IDCLIENT'])){
+                            $id = $_GET['IDCLIENT'];
+                            $results=new Client('abi');
+                            $results->delClient($id);
+                            header('Location:./index.php?action=buisness&successDel=true');                           
+                        }
+                        Controller::viewPage('./view/pages/delClientView.php');
+                                
+                    } 
+                    elseif($_GET['action2']==='modifyClient')
+                    {
+                        Controller::viewPage('./view/pages/modifyClientView.php');
                                 
                     }
-                   
+                    elseif($_GET['action2']==='panelModifyClient')
+                    {
+                        if(isset($_POST["IDCLIENT"]))
+                        {
+                            $data = new Client('abi');
+                            $result = $data->updateClient($_POST["IDCLIENT"], $_POST["IDSECT"], $_POST["RAISONSOCIALE"], $_POST["ADRESSECLIENT"], $_POST["CODEPOSTALCLIENT"], $_POST["VILLECLIENT"], $_POST["EFFECTIF"], $_POST["TELEPHONECLIENT"]);
+
+                            Controller::viewPage($root.'/view/pages/clientList.php');
+                            
+                        }
+                        else
+                        {
+                            Controller::viewPage($root.'/view/pages/panelModifyClient.php');
+                        }
+                                
+                    }                      
                                             
     }
     ?>

@@ -43,8 +43,8 @@ $results=Buisness::viewClients();
                 <td class="col-2"><?= $result[7]?></td>
                 <td class="col"><?= $result[3]?></td>
                 <td class="col-2"><?= $result[5] ?></td>
-                
-                <td class="col-2 text-center"><a href="./index.php?action=buisness&amp;action=detailClient&amp;detail="<?= $result[0] ?>><i class="fas fa-info-circle"></i></a></td>
+
+                <td> <a href="../index.php?action=buisness&action2=detailClient&IDCLIENT=<?= $result['IDCLIENT']?>">Voir-Modifier</a></td>  
                 
             </tr>
            <?php
