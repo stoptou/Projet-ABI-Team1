@@ -22,7 +22,7 @@
     <div class="container-fluid px-0">
         <header class="container px-0 mt-3">
 
-            <div class="row logo mx-0 d-flex align-items-center justify-content-center">
+            <div class=" headerr row logo mx-0 d-flex align-items-center justify-content-center">
                 <div class="col-2 p-2 headerr">
                     <a href="/index.php"><img class="img-fluid" alt="logo" src="./public/IMG/Logo_Transparent.png" style=width:100% ></a>                   
                 </div>
