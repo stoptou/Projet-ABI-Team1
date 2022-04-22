@@ -1,6 +1,4 @@
 <?php
-// Page actualité
-
     // Lien et variables pour obtenir la météo de Paris
     
     $url = "https://api.openweathermap.org/data/2.5/weather?q=Paris&lang=fr&units=metric&appid=69aa0652946e6e5dccd1020284ae105d";
@@ -39,14 +37,16 @@
 <div class= "containeur text-center">
     <div class = "lead">
         <div class ="h1">
+            <div class = "pt-3">
     <?php echo 'Actualité'; ?> <!-- Titre en haut de la page -->
+            </div>
         </div>
     </div>
 </div>
 
 
 <div class = "containeur text-center py-5">
-    <div class = " border mt-2 rounded-circle">
+    <div class = " border mt-2 rounded-5 mb-3">
     <marquee direction="left" scrollamount="20">La Météo du jour à <?php echo "$name :";  // Insérer le nom de la ville de Paris ?></marquee>
 </div>
 
@@ -60,7 +60,9 @@
                 <div class="d-flex">
                     <h6 class="flex-grow-1"> <?php echo $name; ?>
                     </h6>
+                    <div class = "pl-2">
                     <?php echo $hour; ?>
+                    </div>
                 </div>
                 <div class="d-flex flex-column temp mt-5 mb-3">
                     <h1 class="mb-0 font-weight-bold" id="heading"> <?php echo $temp;?>° C </h1> <span class="small grey"> <?php echo $desc ?></span>
@@ -115,7 +117,7 @@
 
 
 <!-- affichage date et heure -->
-<div class = "text-left">
+<div class = "text-left pl-4 pt-4">
     <?php 
         setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
         echo (strftime("%A %d %B"));
@@ -128,16 +130,17 @@
 
 
 <!-- Début du premier article -->
-<div class = 'height: 100px'>
+<div class = 'height: 100px pt-4'>
 
     <h2>Quand les femmes s'engagent pour les femmes</h2>
     <figure>
         <img src="https://www.touteleurope.eu/wp-content/uploads/2021/03/journee_droits_des_femmes_2021.jpg" alt="Des femmes de tous horizons en dessin"
-        class="col-6">
+        class="col-6 pt-3">
     <div class="font-italic">
         <figcaption  class ="">Active Bretagne travaille avec de nombreux collectifs de femmes engagées</figcaption> 
         </div>
     </figure>
+    <div class = "pt-3 px-4">
     <p>
     Chaque jour, les équipes de France Active accompagnent des femmes entrepreneures dans leur projet.
     La journée internationale des droits des femmes nous donne l’occasion de mettre en avant toutes celles
@@ -170,23 +173,28 @@
     cause des femmes. A travers leur projet, elles ont choisi d’œuvrer à l’inclusion des femmes et à leur donner la capacité de
     prendre toute leur place dans la société. <br> <br>
 
-    Le 15/04/2022 par K.M
+    <strong> Le 15/04/2022 par K.M </strong>
     </p>
+    </div>
 </div>
 <!-- Fin du premier article -->
 
 <!-- Début du second article -->
-<div>
-    <h2>L'emploi au service du handicap en Bretagne</h2>
+
+<div class = "border-top">
+    <h2 class = "pt-3">L'emploi au service du handicap en Bretagne</h2>
+</div>
+
     <figure>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrXiAwaKGsDZz-VFhr2nXbbtFDA5GCLBqNfQ&usqp=CAU" alt="Dessin de plusieurs personnes, dont un en chaise roulante, travaillants sur des ordinateurs"
-        class="col-7">
+        class="col-7 pt-3">
     
         <div class ="font-italic">
         <figcaption class ="">Active Bretagne s'engage à créer des postes pour les travailleurs handicapés</figcaption> 
         </div>
     </figure>
 
+    <div class = "pt-3 px-4">
     <p>
     Les lignes bougent pour les entreprises adaptées. La loi appelée « Pour la liberté de choisir son avenir professionnel » ouvre en effet
     la voie à des expérimentations de travail temporaire pour les personnes en situation de handicap.
@@ -223,15 +231,16 @@
     des entreprises de la région. « Nous comptons sur un vivier de 800 personnes sur tous types de métiers et tous types de postes – même très qualifiés – c’est énorme ! 
     Nous sommes bien loin de l’image du salarié handicapé qui ne peut faire que quelques tâches. Nous serons donc là pour les entreprises qui rechercheront des compétences dès que
     ça repartira. Nous sommes prêts ! », conclut Julian Barone. <br><br>
-    Le 15/04/2022 par K.M
+    <strong> Le 15/04/2022 par K.M </strong>
     </p>
-</div>
+    </div>
 <!-- Fin du second article -->
 
-
+<div class = "pt-4">
 <h2>Plus d'articles</h2>
+</div>
 
-<div class = "containeur">
+<div class = "containeur pt-4">
     <div class = "row custom-line">
         <div class="col align-self-start">
             <div class= ".w-30">
@@ -244,7 +253,7 @@
     <img src="https://www.francetvinfo.fr/pictures/M5ZECU8LPRF3661Xv5abqD3rbOQ/0x306:5955x3656/944x531/filters:format(webp)/2022/04/12/phprOCXGg.jpg" 
     alt=""
     class="col-10">
-    <figcaption class = "col-10">La France manque de développeurs informatiques : les idées reçues sur ces métiers qui recrutent restent tenaces</figcaption>
+    <figcaption class = "col-11">La France manque de développeurs informatiques : les idées reçues sur ces métiers qui recrutent restent tenaces</figcaption>
 </a>
 </div>
         </div>
@@ -259,7 +268,7 @@
     <img src="https://media.lesechos.com/api/v1/images/view/6258fc1b4eed857e3a749406/1280x720-webp/0701359404589-web-tete.webp" 
     alt=""
     class="col-10">
-    <figcaption class = "col-10">Témoignage : << Ancien chauffeur de taxi au Soudan, je suis devenu développeur web en France >></figcaption>
+    <figcaption class = "col-11">Témoignage : << Ancien chauffeur de taxi au Soudan, je suis devenu développeur web en France >></figcaption>
 </a>
 
     </div>
@@ -276,7 +285,7 @@
     <img src="https://img.lemde.fr/2022/03/28/0/0/1200/653/664/0/75/0/9d2b23b_1648468470787-eewegebxuaex4sg.jpeg" 
     alt=""
     class="col-10">
-    <figcaption class = "col-10">Les développeurs Web, << rock stars >> du marché de l'emploi, craignent de devenir les << ouvriers d'hier >></figcaption>
+    <figcaption class = "col11">Les développeurs Web, << rock stars >> du marché de l'emploi, craignent de devenir les << ouvriers d'hier >></figcaption>
 </a>
             </div>
         </div>
