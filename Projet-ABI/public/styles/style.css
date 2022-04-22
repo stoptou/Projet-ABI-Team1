@@ -8,14 +8,14 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color:#505050;
-    background-color: #F3E9DD;
+    background-color: #FDF6EC;
 }
 a{
     text-decoration: none;
     text-transform: uppercase;
 }
 header, section{
-    background-color: #fff;
+    background-color: #F3E9DD;
 }
 .socialNetwork
 {
@@ -34,7 +34,7 @@ header, section{
 }
 .socialNetwork ul li:hover
 {
-    background-color: #E78810;
+    background-color: #DAB88B;
 }
 .logo
 {
@@ -43,7 +43,7 @@ header, section{
 }
 .slogan
 {
-    color:#505050;
+    color:#483434;
     
 }
 .menu
@@ -57,7 +57,7 @@ header, section{
 }
 
 a:hover{
-    color: #E78810 !important;
+    color: #DAB88B !important;
     transform: translateX(3px);
     transition: .2s ease;
     
@@ -71,24 +71,24 @@ a:hover{
 }
 .dropdown-item:hover
 {
-    color: #E78810 !important;
+    color: #DAB88B !important;
     transform: translateX(3px) !important;
     transition: .2s ease !important;
     background-color: #ECECEC !important;
 }
 .active a
 {
-    color: #E78810 !important;
+    color: #DAB88B !important;
 }
 .espace-membre a
 {
-    color: #E78810;
+    color: #DAB88B;
     font-weight: bold;
 }
 .paragraph-section
 {
     font-size: 18px;
-    color:#505050;
+    color:#B7CADB;
 }
 .titre-section
 {
@@ -96,7 +96,7 @@ a:hover{
 }
 .rejoindre
 {
-    background-color: #ECECEC;
+    background-color: #B7CADB;
  
    
 }
@@ -120,7 +120,7 @@ footer
 }
 .connexion
 {
-    color: #E78810;
+    color: #DAB88B;
 }
 .connexion:hover{
     transform: translateX(3px);
@@ -152,7 +152,7 @@ label{
     font-size: 20px;
 }
 label:hover{
-    color: #E78810;
+    color: #DAB88B;
     transform: translateX(3px);
     transition: .2s ease;
     font-weight: italic;

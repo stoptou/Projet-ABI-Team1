@@ -6,6 +6,7 @@
 
 <!-- Banniere -  caroussel page d'acccueil -->
 
+
     <div class="container container-fluid my-2" >
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
             <ol class="carousel-indicators">
@@ -59,7 +60,9 @@
                         <h2 class="titre-section text-center">Nous découvrir</h2>
 
                         <!--Faire le liens du bouton avec GROUP ABI-->
-                        <a href="index.php?action=ABIgroup"><button class="btn btn-primary">Notre groupe</button></a>
+
+                        <a href="index.php?action=ABIgroup"><button class="btn btn-secondary">Notre groupe</button></a>
+                        
 
                     </div>
                     <div class="col-md-2">
@@ -96,8 +99,9 @@ général une démarche Scrum pour réaliser ses développements.
                         <!-- <img class="" alt="Image à trouver" src="./public/IMG/" width="100%"> -->
                     </div>
                     
+                    
 
-                </div>
+                </div><br>
 <?php $content=ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>
