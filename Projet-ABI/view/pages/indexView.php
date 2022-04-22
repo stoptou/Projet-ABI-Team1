@@ -55,7 +55,7 @@
                         <h2 class="titre-section text-center">Nous découvrir</h2>
 
                         <!--Faire le liens du bouton avec GROUP ABI-->
-                        <button onClick="Location = index.php?contact=ABIgroup" class="btn btn-primary">Notre groupe</button>
+                        <a href="index.php?action=ABIgroup"><button class="btn btn-primary">Notre groupe</button></a>
 
                     </div>
                     <div class="col-md-2">
