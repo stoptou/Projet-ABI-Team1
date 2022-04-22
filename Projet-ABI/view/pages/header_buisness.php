@@ -18,7 +18,7 @@
 <header class='container'>              
     <div class="row">
         <div class="col mx-0 px-0">
-            <img src="./public/IMG/" alt="Bannière Gestion Commerciale à créer" height="200px" width="100%">
+            <img src="./public/IMG/slogan_banner_thin.png" alt="Bannière Gestion Commerciale à créer" height="200px" width="100%">
         </div>
     </div>
 </header>

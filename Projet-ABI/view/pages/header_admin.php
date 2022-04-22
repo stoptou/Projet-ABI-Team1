@@ -17,7 +17,7 @@
     <header class='container'>
        <div class='row mt-4'>
             <div class='col p-4'>
-                <a href="index.php" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/svg/svg/house.svg" alt="Image Home à créer" width="100px" height="100px"></a>
+                <a href="index.php" data-toggle="tooltip" title="Accueil"><img src="./public/IMG/svg/svg/house.svg" alt="Image Home à créer" width="50px" height="50px"></a>
             </div>
             <div class='col p-4'>
                 <ul class="nav flex-column text-center">
