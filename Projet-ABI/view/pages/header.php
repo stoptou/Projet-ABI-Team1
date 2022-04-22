@@ -41,6 +41,7 @@
                             <!--liens a ajouter -->
                             <a class="dropdown-item" href="/index.php?action=home">Accueil</a>
 
+
                             <a class="dropdown-item" href="../index.php?action=ABIgroup">Groupe ABI</a>
                             <a class="dropdown-item" href="./index.php?action=actuality">Actualité</a>
                             <a class="dropdown-item" href="./index.php?action=offer">Nos offres</a>
@@ -93,9 +94,7 @@
             <nav class="menu navbar navbar-expand d-none d-md-block">
                 <ul class="navbar-nav d-flex justify-content-around">
                     <!--Mettre la classe Active en place sur le Menu-->
-                <li class="nav-item <?php
-
-                    if ($_SERVER['SCRIPT_NAME']==='./index.php?action=home'):?> active <?php endif?>">
+                    <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=home'):?> active <?php endif?>">
                         <a class="nav-link" href="../index.php?action=home">Accueil</a>
                     </li>
                     <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME']==='./index.php?action=ABIgroup'):?> active <?php endif?>">
