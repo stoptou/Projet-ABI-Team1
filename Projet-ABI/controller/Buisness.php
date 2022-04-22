@@ -17,7 +17,14 @@ class Buisness
     {
         $results= new Client('abi');
         return $results->getClients();
-       
+    }
+    //(eric) renvoie client par idclient
+    public static function viewClient($id)
+    {
+        $results= new Client('abi');
+        $result = $results->getClient($id);
+        return $result;
+              
     }
 
     public static function viewSecteurs()
