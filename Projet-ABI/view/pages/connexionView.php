@@ -1,4 +1,5 @@
 <?php
+// Formulaire de connection utilisateur
 if (!empty($_SESSION)) {
     header('Location:./index.php?action=home');
         exit();

@@ -1,3 +1,4 @@
+<!-- Formulaire rechercher un client (avec interactivité Ajax) -->
 <div class="row mx-auto">
     <div class="col">
         <h3 class="text-center mt-4 p-4">Rechercher un client</h3>

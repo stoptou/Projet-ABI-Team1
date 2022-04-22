@@ -1,5 +1,5 @@
 <?php
-
+// Formulaire modification infos utilisateur
 use ABI\model\Database;
 
 $data= new Database('abi');

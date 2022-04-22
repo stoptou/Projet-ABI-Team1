@@ -1,7 +1,6 @@
 <?php
-
+// Page suppression d'un client
 use ABI\controller\Buisness;
-
 
 $results=Buisness::viewClients();
     if(!empty($results))
@@ -34,6 +33,7 @@ $results=Buisness::viewClients();
                 <td><?= $result['ADRESSECLIENT']?></td>
                 <td><?= $result['CODEPOSTALCLIENT']?></td>
                 <td><?= $result['VILLECLIENT']?></td>
+                <!-- Suppression client - envoie son id -->
                 <td> <a href="../index.php?action=buisness&action2=delClient&IDCLIENT=<?= $result['IDCLIENT']?>">Supprimer</a></td>              
             </tr>
             <?php

@@ -2,12 +2,16 @@
 namespace ABI\controller;
 use \ABI\model\Database;
 
+//Tableau de bord (Gestion utilisateurs)
+
+// Récupération du chemein du projet par variable superglobale
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require($root.'/controller/Auth.php');
 
-
+// Class Dashboard (tableau de bord) pour la gestion utilisateurs
 class Dashboard
 {
+    // Renvoie la table utilisateurs
     public static function viewUsers()
     {
         $results= new Database('abi');
@@ -15,7 +19,7 @@ class Dashboard
     
        
     }
-    
+    // Vérification données utilisateur et redirection selon son role
     public static function checkUser($email, $password)
     {
         $data= new Database('abi');
@@ -51,14 +55,14 @@ class Dashboard
     }
 
 
-    
+    // Modification données d'un utilisateur
     public static function modifyUserDashboard($value)
     {
         $results= new Database('abi');
         return $results->showUser($value);
     }
 
-    // Création de la requête suppression d'un utilisateur 15/04 Marine Mickael
+    // Suppression d'un utilisateur
     public static function deleteUserDashboardById($id)
     {
         $results= new Database('abi');

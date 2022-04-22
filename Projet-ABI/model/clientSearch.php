@@ -1,5 +1,5 @@
 <?php
-
+// Traitement de l'interactivité avec Ajax (fichier app.js) pour la modification données client
 use \ABI\controller\Buisness;
 
 require '../controller/Buisness.php';

@@ -1,5 +1,5 @@
 <?php
-
+// Traitement de l'interactivité avec Ajax (fichier app.js) pour la modification données utilisateur
 use ABI\controller\Dashboard;
 
 require '../controller/Controller.php';

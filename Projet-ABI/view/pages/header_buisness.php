@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Header de la page gestion commerciale -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">

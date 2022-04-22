@@ -1,5 +1,5 @@
 <?php 
-
+// à effacer
 use \ABI\model\Database;
 class User
 {

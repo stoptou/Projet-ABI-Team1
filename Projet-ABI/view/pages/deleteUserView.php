@@ -1,5 +1,5 @@
 <?php
-
+// Page suppression d'un utilisateur
 use ABI\controller\Dashboard;
 
 $results=Dashboard::viewUsers();
@@ -32,6 +32,7 @@ $results=Dashboard::viewUsers();
                 <td><?= $result->last_name?></td>
                 <td><?= $result->email?></td>
                 <td><?= $result->role?></td>
+                <!-- Suppression utilisateur - envoie son id -->
                 <td> <a href="../index.php?action=dashboard&action3=deleteUser&id_user=<?= $result->id_user?>">Supprimer</a></td>
             </tr>
            <?php

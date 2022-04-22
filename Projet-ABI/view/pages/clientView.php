@@ -1,4 +1,5 @@
 <?php
+// Routeur secondaire - volet gestion commerciale
 use \ABI\controller\Controller;
 use ABI\model\Client;
 
@@ -68,6 +69,7 @@ if(isset($_GET['action2']))
                     {
                         if(isset($_POST["IDCLIENT"]))
                         {
+                            // test vérification existence id client dans le post -> Update données client
                             $data = new Client('abi');
                             $result = $data->updateClient($_POST["IDCLIENT"], $_POST["IDSECT"], $_POST["RAISONSOCIALE"], $_POST["ADRESSECLIENT"], $_POST["CODEPOSTALCLIENT"], $_POST["VILLECLIENT"], $_POST["EFFECTIF"], $_POST["TELEPHONECLIENT"]);
 

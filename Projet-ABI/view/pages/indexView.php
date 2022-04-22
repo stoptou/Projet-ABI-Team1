@@ -1,6 +1,6 @@
 <?php $title='Accueil'; ?>
 <?php ob_start(); ?>
-
+<!-- Banniere -  caroussel page d'acccueil -->
 <div class="px-0 mx-0 d-none d-md-block banniere">     
     <div class="container container-fluid my-2" >
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3500">
