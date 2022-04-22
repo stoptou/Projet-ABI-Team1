@@ -6,9 +6,10 @@ namespace ABI\model;
 use Exception;
 use \PDO;
 
+// Classe secteur (fille de Database) pour les opération sur la table "Secteur d'activité"
 class Secteur extends Database
 {
-
+    // Renvoi tous les secteurs d'activité
     public static function getSecteurs()
     {
         try
@@ -23,6 +24,7 @@ class Secteur extends Database
             die($e->getMessage());
         }
     }
+    // Renvoie un secteur selon son id
     public static function getSecteur(string $secteur):int
     {
         try

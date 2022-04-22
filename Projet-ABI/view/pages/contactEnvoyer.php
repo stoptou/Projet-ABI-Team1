@@ -1,5 +1,5 @@
 <?php
-
+// Envoi du message provenant du formulaire de contact - avec "PHPMailer" - par protocole smtp (gmail)
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;

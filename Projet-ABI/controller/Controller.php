@@ -1,4 +1,5 @@
 <?php
+// Classe controleur principal
 namespace ABI\controller;
 
 class Controller

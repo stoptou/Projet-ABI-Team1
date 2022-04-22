@@ -1,4 +1,6 @@
 <?php
+// Page actualité
+
     // Lien et variables pour obtenir la météo de Paris
     
     $url = "https://api.openweathermap.org/data/2.5/weather?q=Paris&lang=fr&units=metric&appid=69aa0652946e6e5dccd1020284ae105d";

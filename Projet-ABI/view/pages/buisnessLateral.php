@@ -1,4 +1,4 @@
-
+<!-- Menu latéral volet gestion commerciale -->
     <div class="col-2 lateral navbar text-center px-4 ml-4 mr-0">
         <ul class="navbar-nav w-100 h-100">
             <li class="navbar-item mb-4 picture">

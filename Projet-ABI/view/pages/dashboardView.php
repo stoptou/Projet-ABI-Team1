@@ -1,5 +1,5 @@
 <?php
-
+// Page gestion utilisateurs (Tableau de bord)
 
 use ABI\controller\Controller;
 use \ABI\controller\Auth;
@@ -113,6 +113,7 @@ ob_start();
 
 
 <?php 
+    // Routeur secondaire _ volet gestion utilisateurs
     if(isset($_GET['action3']))
     {
         $root = realpath($_SERVER["DOCUMENT_ROOT"]);

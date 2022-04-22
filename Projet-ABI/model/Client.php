@@ -6,10 +6,11 @@ use \Exception;
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require ($root.'/model/Database.php');
 
+// Classe pour la gestion client (volet gestion commerciale)
 class Client extends Database
 {
 
-
+    // récupération de la table clients
     public function getClients()
     {
         try
@@ -24,6 +25,7 @@ class Client extends Database
         }
 
     }
+    // Récupération des données d'un client grace à son id
     public static function getClient($id_client)
     {
         try
@@ -42,6 +44,7 @@ class Client extends Database
             die($e->getMessage());
         }
     }
+    // Ajout d'un client dans la base de données
     public function addClient($id_secteur,$raison_sociale,$adresse,$code_postale,$ville,$effectif,$telephone)
     {
         try
@@ -61,7 +64,7 @@ class Client extends Database
             die($e->getMessage());
         }
     }
- // (Eric)  Update données client
+ // Mise à jour des données d'un client
  public function updateClient($id_client,$id_secteur,$raison_sociale,$adresse,$code_postal,$ville,$effectif,$telephone)
  {
      try
@@ -84,7 +87,7 @@ class Client extends Database
      }
  }
  
- // (Eric) Suppression client (OK)
+ // Suppression d'un client 
  public function delClient($IDCLIENT)
  {
      try

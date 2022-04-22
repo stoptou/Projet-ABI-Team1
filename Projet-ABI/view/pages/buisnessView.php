@@ -1,5 +1,5 @@
 <?php
-
+// Page gestion commerciale
 use \ABI\controller\Auth;
 
 $title='Gestion commerciale';
@@ -9,6 +9,7 @@ ob_start();
 ?>
 <div class="row navbar navbar-expand-sm mx-0 px-0">
     <div class="col pt-2">
+        <!-- Affichage du nom et du role de l'utilisateur connecté -->
         <p class='p-1 alert-success'>Connecté en tant que <?='<b>'.strtoupper($_SESSION['first_name']).' '.strtoupper($_SESSION['last_name']).'('.$role.')'.'</b>'; ?></p>
 
     </div>

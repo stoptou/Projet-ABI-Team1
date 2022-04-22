@@ -1,4 +1,5 @@
 <?php
+// Routeur principal
 session_start();
 
 use ABI\controller\Controller;

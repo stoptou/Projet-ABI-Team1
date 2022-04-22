@@ -4,7 +4,7 @@ use \PDO;
 use \ABI\model\Database;
 
 
-
+// Classe Auth (autorisation) - Login -Vérification des roles
 class Auth
 
 {
@@ -31,6 +31,7 @@ class Auth
          return $user ?: null;// revoi l'utilisateur si c false il revoi null
        
     }
+    // Login utilisateur
     public function login(string $user_name, string $password)
     {
         $query= $this->pdo->prepare('SELECT * FROM utilisateur WHERE email=:username');
@@ -58,6 +59,7 @@ class Auth
         return null;
 
     }
+    // Volet Utilisateur - Vérification du Role 
     public static function checkRoleAdmin():string
     {
         $data= new Database('abi');
@@ -80,7 +82,7 @@ class Auth
         exit();
         }
     }
-
+    // Volet Gestion commerciale - Vérification du role
     public static function checkRoleBuisness():string
     {
         $data= new Database('abi');

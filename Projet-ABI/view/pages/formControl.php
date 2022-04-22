@@ -1,5 +1,5 @@
 <?php
-
+// Contrôle centralisé des entrées dans les formulaires
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require ($root.'./view/pages/contactEnvoyer.php');
 
@@ -11,7 +11,7 @@ foreach ($_POST as $key => $value) {
     $value = trim($value);
     $value = stripslashes($value);
     $value = htmlspecialchars($value);
-
+    // Formulaire utilisateur
     switch ($key) {
         case 'email':
             if ((!filter_var($value, FILTER_VALIDATE_EMAIL))) {
@@ -44,6 +44,7 @@ foreach ($_POST as $key => $value) {
 }
 
 switch ($_POST['form']) {
+    // Formulaire ajouter un utilisateur
     case 'addUser':
         if (!isset($error)) {
             $data = new Database('abi');
@@ -56,7 +57,7 @@ switch ($_POST['form']) {
             header('Location: ./index.php?action=dashboard&action3=addUser&errorForm='.$error);
         }
         break;
-    
+    // Formulaire modifier un utilisateur
     case 'modifyUser':
         if (!isset($error)) {
             $data = new Database('abi');
@@ -67,7 +68,7 @@ switch ($_POST['form']) {
             header('Location: ./index.php?action=dashboard&action3=modifyUser&errorForm='.$error);
         }
         break;
-
+    // Formulaire ajouter un client
     case 'addClient':
         if (!isset($error)) {
             $client = new Client('abi');
@@ -90,6 +91,7 @@ switch ($_POST['form']) {
     //     }
     //     break;
 
+    // Formulaire de contact
     case 'contactForm':
         if (!isset($error)) {
             $send = sendMail($_POST["name"], $_POST["subject"], $_POST["email"], $_POST["body"]);

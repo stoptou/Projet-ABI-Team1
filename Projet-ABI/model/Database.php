@@ -4,6 +4,7 @@ namespace ABI\model;
 use Exception;
 use \PDO;
 
+// Classe parente Database - Gestion et Connexion physique a la base de donnée en utilisant la class PDO
 class Database
 {
     protected $db_name;
@@ -21,14 +22,14 @@ class Database
         $this->db_pass=$db_pass;
         $this->db_host=$db_host;
     }
-
+    // Connexion à la base grace à la classe PDO
     public static function getPDO(): PDO
     {
         try
         {
             if(self::$pdo===null)
             {
-                $pdo= new PDO('mysql:host=localhost:3306;dbname=abi','root', 'root');
+                $pdo= new PDO('mysql:host=localhost:3306;dbname=abi','root', '');
                 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 self::$pdo=$pdo;
             }
@@ -40,7 +41,7 @@ class Database
         }   
     }
     
-    
+    // Récupère la table utilisateurs
     public function getUsers ()
     {
         try
@@ -54,6 +55,7 @@ class Database
             die($e->getMessage());
         }
     }
+    // Récupère un utilisateur grace à son id
     public function getUser(int $id)
     {
         try{
@@ -71,6 +73,7 @@ class Database
         }
 
     }
+    // Modification des données d'un utilisateur
     public function updateUser(int $id, string $first_name, string $last_name, string $email)
     {
         try
@@ -89,7 +92,7 @@ class Database
 
     }
 
-    // Modification de la fonction pour effacer les utilisateur par l'id
+    // Suppression d'un utilisateur
     public function deleteUserById(int $id)
     {
         try
@@ -105,7 +108,7 @@ class Database
         }
 
     }
-
+    // Ajouter un utilisateur dans table
     public function addUser(string $first_name, string $last_name, string $email, string $password,string $role)
     {
         try
@@ -125,6 +128,7 @@ class Database
             die($e->getMessage());
         }
     }
+    // Renvoie un user
     public function showUser(string $value)
     {
         try{
@@ -141,6 +145,7 @@ class Database
             die($e->getMessage());
         }
     }
+    // Renvoie un client
     public function showClients($value)
     {
         try{

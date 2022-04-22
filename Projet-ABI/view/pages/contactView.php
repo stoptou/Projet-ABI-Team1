@@ -1,7 +1,7 @@
 <?php $title='Nous contacter'; ?>
 
 <?php ob_start() ?>
-
+<!-- Formulaire de contact -->
 <hr class="py-0 my-0">
 <?php
         if(isset($_GET['send']))

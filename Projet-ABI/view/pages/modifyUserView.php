@@ -1,4 +1,5 @@
 <?php
+// formulaire recherche utilisateur (Interactivité Ajax)
 if (isset($_GET['errorForm'])) {
     echo($_GET['errorForm']);
 }
@@ -12,6 +13,7 @@ if (isset($_GET['errorForm'])) {
             <div class="form-group">
                 <input type="text" placeholder="Tapez votre recherche ici" name="search" id="search" 
                         class="form-control p-4" onkeyup="showUser(this.value)" onsubmit="showUser(this.value)">
+                        <!-- Interactivité Ajax -->
             </div>
         <div id='result'>
 

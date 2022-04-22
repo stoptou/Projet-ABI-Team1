@@ -1,4 +1,5 @@
 <?php
+// Formulaire ajout Utilisateur
 if (isset($_GET['errorForm'])) {
     echo($_GET['errorForm']);
 }

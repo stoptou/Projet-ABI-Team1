@@ -1,6 +1,6 @@
 
 <?php
-
+// Formulaire modification infos client
 use ABI\Controller\Buisness;
 
 $result=Buisness::viewClient((int)($_GET['IDCLIENT']));

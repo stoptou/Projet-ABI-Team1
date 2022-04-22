@@ -1,3 +1,4 @@
+// Implementation Ajax pour l'interactivité des formulaires utilisateur et client 
 function showUser(str) {
     if (str == "") {
       document.getElementById("result").innerHTML = "";
